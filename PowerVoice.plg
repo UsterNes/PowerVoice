@@ -1,0 +1,215 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: PowerVoice - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\tony\LOCALS~1\Temp\RSP450.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D _WIN32_WINNT=0x400 /D "DTISC" /FR"Debug/" /Fp"Debug/PowerVoice.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\_Global.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\BrowsePath.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\channelcontrol.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\ClientSocket.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\ClientThread.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\ConfigBox.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\DlgAutoLoadCallFlow.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\DlgAutoLoadResource.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\DlgGetPassword.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\DlgSeleCallFlowTable.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\DLGSELERESOURCE.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\DlgViewLicense.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\FaxManager.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\FaxResource.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\IVRChannel.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\IVRClient_Admin.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\IVRClient_MSI.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\IVRGroup.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\ListenSocket.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\MainFrm.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\MyDBReader.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PageExternal.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PageGroup.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PagePBX.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PageSystem.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PCSClientSock.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PCSExtClientSock.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PowerVoice.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PowerVoiceDoc.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\PowerVoiceView.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\ThreadProcessGCEvents.cpp"
+"D:\PCS_Works\NewPowerCall_MFC\PowerVoice\ThreadSysMain.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\tony\LOCALS~1\Temp\RSP450.tmp" 
+Creating temporary file "C:\DOCUME~1\tony\LOCALS~1\Temp\RSP451.tmp" with contents
+[
+version.lib libdtimt.lib LIBDXXMT.lib sctools.lib libsrlmt.lib libgc.lib libfaxmt.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/PowerVoice.pdb" /map:"Debug/PowerVoice.map" /debug /machine:I386 /nodefaultlib:"libc" /out:"PowerVoice.exe" /pdbtype:sept /MAPINFO:LINES /MAPINFO:EXPORTS 
+.\Debug\_CommonFunc.obj
+.\Debug\_DataQueue.obj
+.\Debug\_Global.obj
+.\Debug\BrowsePath.obj
+.\Debug\BtnST.obj
+.\Debug\channelcontrol.obj
+.\Debug\CheckGroupBox.obj
+.\Debug\ClientSocket.obj
+.\Debug\ClientThread.obj
+.\Debug\ConfigBox.obj
+.\Debug\ConfigSheet.obj
+.\Debug\DataRecorderConnect.obj
+.\Debug\DirTreeControl.obj
+.\Debug\DlgAutoLoadCallFlow.obj
+.\Debug\DlgAutoLoadResource.obj
+.\Debug\DlgGetPassword.obj
+.\Debug\DlgSeleCallFlowTable.obj
+.\Debug\DLGSELERESOURCE.obj
+.\Debug\DlgViewLicense.obj
+.\Debug\FaxManager.obj
+.\Debug\FaxResource.obj
+.\Debug\HyperLink.obj
+.\Debug\IVRChannel.obj
+.\Debug\IVRClient_Admin.obj
+.\Debug\IVRClient_MSI.obj
+.\Debug\IVRGroup.obj
+.\Debug\ListenSocket.obj
+.\Debug\MainFrm.obj
+.\Debug\ManulCallCom.obj
+.\Debug\MessageQ.obj
+.\Debug\MyDBReader.obj
+.\Debug\MySQLLog.obj
+.\Debug\MySysInfo.obj
+.\Debug\MyThread.obj
+.\Debug\MyThreadList.obj
+.\Debug\PageExternal.obj
+.\Debug\PageGroup.obj
+.\Debug\PagePBX.obj
+.\Debug\PageSystem.obj
+.\Debug\PCSClientSock.obj
+.\Debug\PCSCommunicationEvent.obj
+.\Debug\PCSExtClientSock.obj
+.\Debug\PowerVoice.obj
+.\Debug\PowerVoiceDoc.obj
+.\Debug\PowerVoiceView.obj
+.\Debug\ProductLicense.obj
+.\Debug\Splash.obj
+.\Debug\StdAfx.obj
+.\Debug\Subclass.obj
+.\Debug\ThreadProcessGCEvents.obj
+.\Debug\ThreadSysMain.obj
+.\Debug\TrayIcon.obj
+.\Debug\TTSInterface.obj
+.\Debug\XYTrace.obj
+.\Debug\PowerVoice.res
+.\TTSPackage\InterPhonic\Lib\iFlyTTS.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\tony\LOCALS~1\Temp\RSP451.tmp"
+<h3>Output Window</h3>
+Compiling...
+IVRChannel.cpp
+PCSClientSock.cpp
+PCSExtClientSock.cpp
+ThreadSysMain.cpp
+D:\PCS_Works\NewPowerCall_MFC\PowerVoice\ThreadSysMain.cpp(59) : warning C4018: '<' : signed/unsigned mismatch
+Generating Code...
+Compiling...
+_Global.cpp
+BrowsePath.cpp
+channelcontrol.cpp
+ClientSocket.cpp
+ClientThread.cpp
+ConfigBox.cpp
+DlgAutoLoadCallFlow.cpp
+DlgAutoLoadResource.cpp
+DlgGetPassword.cpp
+DlgSeleCallFlowTable.cpp
+DLGSELERESOURCE.cpp
+DlgViewLicense.cpp
+FaxManager.cpp
+FaxResource.cpp
+IVRClient_Admin.cpp
+IVRClient_MSI.cpp
+IVRGroup.cpp
+ListenSocket.cpp
+MainFrm.cpp
+MyDBReader.cpp
+Generating Code...
+Compiling...
+PageExternal.cpp
+PageGroup.cpp
+PagePBX.cpp
+PageSystem.cpp
+PowerVoice.cpp
+PowerVoiceDoc.cpp
+PowerVoiceView.cpp
+ThreadProcessGCEvents.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\DOCUME~1\tony\LOCALS~1\Temp\RSP453.tmp" with contents
+[
+/nologo /o"Debug/PowerVoice.bsc" 
+.\Debug\StdAfx.sbr
+.\Debug\_CommonFunc.sbr
+.\Debug\_DataQueue.sbr
+.\Debug\_Global.sbr
+.\Debug\BrowsePath.sbr
+.\Debug\BtnST.sbr
+.\Debug\channelcontrol.sbr
+.\Debug\CheckGroupBox.sbr
+.\Debug\ClientSocket.sbr
+.\Debug\ClientThread.sbr
+.\Debug\ConfigBox.sbr
+.\Debug\ConfigSheet.sbr
+.\Debug\DataRecorderConnect.sbr
+.\Debug\DirTreeControl.sbr
+.\Debug\DlgAutoLoadCallFlow.sbr
+.\Debug\DlgAutoLoadResource.sbr
+.\Debug\DlgGetPassword.sbr
+.\Debug\DlgSeleCallFlowTable.sbr
+.\Debug\DLGSELERESOURCE.sbr
+.\Debug\DlgViewLicense.sbr
+.\Debug\FaxManager.sbr
+.\Debug\FaxResource.sbr
+.\Debug\HyperLink.sbr
+.\Debug\IVRChannel.sbr
+.\Debug\IVRClient_Admin.sbr
+.\Debug\IVRClient_MSI.sbr
+.\Debug\IVRGroup.sbr
+.\Debug\ListenSocket.sbr
+.\Debug\MainFrm.sbr
+.\Debug\ManulCallCom.sbr
+.\Debug\MessageQ.sbr
+.\Debug\MyDBReader.sbr
+.\Debug\MySQLLog.sbr
+.\Debug\MySysInfo.sbr
+.\Debug\MyThread.sbr
+.\Debug\MyThreadList.sbr
+.\Debug\PageExternal.sbr
+.\Debug\PageGroup.sbr
+.\Debug\PagePBX.sbr
+.\Debug\PageSystem.sbr
+.\Debug\PCSClientSock.sbr
+.\Debug\PCSCommunicationEvent.sbr
+.\Debug\PCSExtClientSock.sbr
+.\Debug\PowerVoice.sbr
+.\Debug\PowerVoiceDoc.sbr
+.\Debug\PowerVoiceView.sbr
+.\Debug\ProductLicense.sbr
+.\Debug\Splash.sbr
+.\Debug\Subclass.sbr
+.\Debug\ThreadProcessGCEvents.sbr
+.\Debug\ThreadSysMain.sbr
+.\Debug\TrayIcon.sbr
+.\Debug\TTSInterface.sbr
+.\Debug\XYTrace.sbr]
+Creating command line "bscmake.exe @C:\DOCUME~1\tony\LOCALS~1\Temp\RSP453.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+PowerVoice.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

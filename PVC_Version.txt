@@ -1,0 +1,579 @@
+========================================================================
+Date				Modify
+========================================================================
+					、New
+					增加建立会议节点（NF_066）；
+					、Update		2007-08-
+					留言分类记录，
+					播放变量时可设定目录
+					系统变量
+					主菜单定义
+					设置窗口稳定性
+					、New			2007-08-
+					增加数据库联接节点
+					增加XML App驱动节点（仅仅用于Cisco Call Manager）
+
+
+2008-03-10 to 2008-04-02
+V7.5.0.X			???未完成
+					0、switch case节点
+					1、New			2008-03-10, 2008-05-25
+					ASR节点[030]支持；
+					2、Update		2008-04-02
+					CCM支持循环放音
+					
+
+2013-04-25 to 2013-11-19
+V7.4.1.X
+					1、New			2013-04-25	使用新许可机制
+					2、New			2013-05-20	增加系统变量，需要更新tbIVRCDRMast表结构
+					增加全局呼叫标示（CTI产生）：GlobalCallRefID
+					增加电话号码分析系统变量：CountryCode, CityCode, PhoneNumber
+					增加工单ID系统变量：WorkTicketID
+					3、New			2013-07-25
+					节点062（发起电话会议）支持会议目标加拨分机，号码格式与“外拨节点”（NF_090）相同（见V7.1.8.16 2010-12-01）
+					4、Update		2013-08-20
+					CISCO WaveDriver播放语音中判断电话是否挂断
+					5、New			2013-09-09
+					增加自动重启条件：连续创建挂机3次（PCS_MAX_CREATETHREADFAIL）线程失败（自动重启原因位定义：0x0080）
+					6、Update		2013-09-16
+					播放语音文件时使用文件头中的数据长度，而不是实际文件长度，避免文件尾部有非标准数据，产生杂音。
+					7、Fix			2013-09-23
+					修正取得HDSN时不足8位前置为空的错误（应该补0）。
+					8、Fix			2013-11-19
+					修正V7.3.0.6引入的的CTI连接复位Bug：造成单CTI与PBX重置连接后IVR的CTI状态没有更新。
+					9、Update		2013-12-19
+					根据Fotile日志（12-13），Wave设备吊死有时仅在ProcesTimer中捕获，而没有进入ErrorHandle，因此，修改ProcesTimer中的返回值，以便主线程能够主动处理。
+					
+					
+2013-03-06 to 2013-04-12			未发布
+V7.4.0.X			1、New			2013-03-06	支持CUCM 8.6 MediaDriver（专门的编译选项：Cisco MediaDriver）
+					配置说明：
+					- 可以通过"About"对话框，确认程序版本是否支持“MediaDriver”，如果支持，则在版本信息中会有“on Cisco CUCM MediaDriver”；
+					- Cisco TSP Media Driver Configuration中需要选择“Use New Cisco Media Driver”（修改后需要重启操作系统）；
+					- Media Driver支持G.729格式（默认是G.711），需要在CUCM上配置MTP，如果通话一方只支持G.729，但又没有MTP，则呼叫无法建立；
+					- Media Driver有关的设定，存放在IVRS.INI文件中的[CiscoMediaDriver]段中：
+					--- portRangeStart：Media Driver使用的UDP起始端口
+					--- numPorts：Media Driver使用的UDP端口数量（注意：一个IVR通道需要占用4个UDP端口）
+					--- epAPITraceLevel：Media Driver的系统日志级别（0 - Error; 1 - Alarm; 2 - Warning; 3 - Info; 4 - Debug）
+					2、New			2013-04-12	支持CUCM 8.6 MediaDriver
+					增加MediaDriver EndPoint Callback Function: MediaDriverEpCallback()；
+					目前，Media Driver语音文件是G.711 uLaw（mono）。如果要支持G729，则需要以下条件（限制条件多，不建议使用）：
+					A> 确认注册表中默认编解码方式“HKEY_Local_Machine/Software/Cisco Systems, Inc./ RtpLib/G729PassThrough”，默认为关闭（0），可以修改为打开（1）；
+					B> 确认Unified CM配置了MTPs（用于G729编解码），否则呼叫会失败；
+					C> 语音文件为G.729格式，因为G.711和PCM是默认格式，所以如果有G.729语音，则文件后缀名为“.g729”，而同名的G.711或PCM文件也必须存在（.wav），以便在G729失效的时候，能够切换为普通模式播放语音。
+					
+
+2012-09-09 to 2013-03-12
+V7.3.0.X			1、New			2012-09-08	支持Multi-tenant数据记录，数据库结构必须更新为多中心结构（SiteID，CustID）
+					修改IVRS.INI文件，在IVRGroup中增加区分租户的IVR组设置租户ID，如“Group2_CustID=1”（默认为0），
+					IVRGroup的租户信息记录在m_bytCustID中；
+					2、New			2012-11-23	苏州交通局支持异步放音
+					[A]节点096（异步通信）增加属性：是否收到通信响应是否继续异步放音（carryonasynplay）
+					[B]节点006（无条件转移）增加属性：延时（sleep），单位为毫秒
+					3、Update		2012-12-26 For CISCO Only
+					外拨时根据TAPI事件修改TAPI设备状态；
+					4、Update		2012-12-27
+					增加Pica异常报告公共类，以便定位错误；
+					5、New			2012-12-29
+					将连接主CTI和备份CTI的过程分开；
+					6、New			2013-01-13, 2013-01-14 使用2G以上地址
+					主CTI和备份CTI的情况下，SetCTIOpened()中，只要有双连接，则不管之前的CTIOpen状态如何，都发通道初始化消息；
+					7、Fix			2013-01-27 Debug Version
+					针对交通局内存错误问题以及Fotile IVR“自杀”造成排队中的任务吊死问题，进行修正：
+					[A]IVR自杀前，每个有排队任务的通道，发送任务离队消息；
+					[B]堆栈（默认是1M）增加到4M；编译选项：缓冲区安全检查/GS；。
+					8、Update		2013-02-18 Debug Version
+					针对交通局内存错误问题，增加参数开关控制异步挂机还是同步挂机：
+					IVRS.INI文件中的[WORKINFO]段中CTIAnsyOnHook参数，默认值为1。
+					9、Update		2013-03-12 For Dilaogic Only / Fax
+					接收传真失败，如果传真文件长度是0，则删除之。
+					
+
+2012-05-24 to 2012-08-02
+V7.2.3.X			1、New			2012-05-24	For Dilaogic Only / Fax
+					增加对DM/F传真卡的支持，可通过参数FaxBoardStart控制传真资源起始板卡，0表示无传真资源；VFX卡FaxBoardStart=IVRBoardStart；DM/F300卡FaxBoardStart=IVRBoardStart+8
+					2、New			2012-06-19	For Dilaogic Only / Fax
+					增加IVRChannelSPAN、IVRFaxAlternant两个参数，分别控制连续语音通道数量、语音传真资源是否交替编号：
+					如：
+					DM300卡：IVRChannelSPAN=30、IVRFaxAlternant=1；
+					VFX4卡：IVRChannelSPAN=4、IVRFaxAlternant=0；
+					3、New			2012-06-19	For Dilaogic Only / Fax
+					外拨节点(090)增加“显式设置主叫号码（资源ID）”属性；
+					4、Update		2012-07-19
+					允许主动更新AppData和UserData；
+					5、Update		2012-08-02
+					用SmartSleep代替Sleep()以防通道异步挂机不能及时退出；
+					
+
+2012-04-18 to 2012-05-15
+V7.2.2.X			1、Update		2012-04-18
+					[A]节点040（建立留言）：增加属性“通知PL录音系统(NotifyPL)”，如果选中此项，则留言开始时发录音启动消息给PCS；留言结束时发录音停止消息；；
+					[B]节点062（增强转坐席）改为“发起会议”，支持CTI会议和语音卡会议（目前语音卡会议仅支持CISCO CTI Port）
+					[C]节点069（转虚拟分机）：增加属性“最大尝试次数”和“尝试间隔”
+					2、Fix			2012-04-21
+					修正错误：节点096（异步通信）等待应答过程中通话中断后，又进入新电话，新电话会继续上一个呼叫的流程。
+					3、New			2012-05-07
+					节点000（系统节点）：增加挂机入口节点属性，在执行挂机操作前系统自动转入该节点（通常用于收尾工作）
+					4、Update		2012-05-15
+					解决CISCO会议呼入有时没有主叫的问题，用CTI CallIn事件中的主被叫取代；
+
+
+2011-11-30 to 2012-03-09
+V7.2.1.X			1、Fix		2011-11-30
+					重要更新：修正IVR Channel初始化不完全的错误，此错误会导致每个通道启动后第一次呼叫的报表数据不准确；
+					2、Fix		2011-12-01
+					增加：IVRGroup分配呼叫前判断组是否启动，如果未启动，则不分配；
+					3、New		2012-01-17
+					外拨节点(090)增加是否强制摘机开关；
+					4、New		2012-03-09
+					增加系统变量：ChannelID，只读，定义时不需要分配空间，只要有名字即可使用
+					
+					
+2011-08-08 to 2011-10-20
+V7.2.0.X			1、Fix		2011-08-08		【For Testing in Fotile Only】
+					遇到会议磋商失败（lineSetupConference() retrun: 0x8000002c）增加一种处理方式：单步转接（代码3）：
+					[SYSEN][ConferenceFailedMethod]），-1 - 挂断；1 - 继续排队；2 - 做无应答处理；3 - 单步转接（参见V7.1.8.11 2010-08-10）
+					处理步骤：
+					A> 先发TCP_UMS2PCS_REMOVETASK_REQ消息给PCS，结果置为成功；
+					B> 然后发TCP_IVR2PCS_CALL_SINGLESTEPTRANS消息，请求单步转接，并延时5000ms；
+					C> 单步转接消息发出后，IVR即认为转接成功（不做后续判断）、IVR会自行挂断，PCS需要自行处理UMS任务的后续状态。
+					2、Update	2011-10-02
+					CIVRChannel类增加SetSwitchResult()函数，以便于记录日志；
+					3、Fix		2011-10-08
+					排队时在UMS入队请求正常响应之前，如果主叫挂线，这时分配标记不应该记为超时；
+					4、Fix		2011-10-08		【For Testing in Fotile Only】
+					修改修改强行退出代码，将PostMessage(WM_CLOSE)移后；
+					5、Fix		2011-10-20		【For Testing in Fotile Only】
+					增加详单记录标记，在记录详单前，不允许清空数据；
+					
+
+2011-04-16 to 2011-07-22
+V7.1.9.X			1、Fix		2011-04-16		【For Testing in Fotile Only】
+					遇到“Play: waveOutPrepareHeader error: 0x7”(NO_MEM)错误，所有通道放音都将错误，只能重启IVR。因此，设置自动重启过程（需要WatchDog配合启动）。
+					自动重启原因定义（开关位操作）见"PCS_PVC_AUTOCLOSE"常量定义（_Global.h），配置项在[SYSEN][AutoCloseFlag]中。
+					2、Fix		2011-04-22
+					收到UMS Dispath消息如果判断Task ID不一致，没有处理会造成死循环，因此接受消息时增加Task ID判断和日志；
+					3、Update	2011-04-25		【For Testing in Fotile Only】
+					统计转接失败率，并设定门限。如果最近20个电话（nMW_TransFail_Calls [5..200]）的转接失败率大于门限30（nTH_MaxTransFailRate [1..100]），则自动重启。
+					4、Update	2011-05-10		【For Testing in Fotile Only】
+					使用TerminateProcess代替ExitProcess，确保故障自动关闭；
+					5、Update	2011-06-15		【For Testing in Fotile Only】
+					自检发现IVRChannel线程吊死后强制退出时，将通道启动标记强制设为FALSE，以确保通道线程在下次自检时能够启动；
+					6、Fix		2011-06-16		【For Testing in Fotile Only】
+					[A]如果IVR组分配电话给IVR通道失败（call redirect failed），重新启动通道时，应更新IVR通道查询列表，而不能直接调用CTapiLine::Restart()方法；
+					[B]重新启动线程前确保先挂机、COM环境反初始化；
+					7、Fix		2011-06-24		【For Testing in Fotile Only】
+					修改CMyThread基础类，增加强制回收线程句柄方法“CloseThreadHandle()”，用于强制终止线程时清理现场，以便线程能够重新启动；
+					如果WaveDriver吊死（所有通道都无法放音），则应重启IVR；
+					8、Update	2011-06-25		【For Testing in Fotile Only】
+					继续任务失败（无法继续），则将m_strTaskID置空，下次就不发继续任务消息、而是发新增任务消息
+					9、Update	2011-06-27		【For Testing in Fotile Only】
+					电话刚分配主叫就挂断时，避免应答超时，在异步挂机操作中修改状态；
+					【2011-06-29】IVR结果增加'系统错'、'操作超时'两个原因代码；
+					【2011-07-03】系统变量CustomerID赋值时结尾主动加'\0'；
+					【2011-07-10】CWave::CloseDev()中调整锁的位置；
+					【2011-07-10】修改MQ_SendMsg_DispatchTaskReqAck返回值ErrorCode与协议描述保持一致（以前用了开关常量）
+					【2011-07-10】修改强行退出代码，确保能够终止进程；
+					【2011-07-22】遇到MMSYSERR_NOMEM时，再试一次，还不行才终止程序；
+
+
+2010-03-08 to 2011-04-08
+V7.1.8.X			1、New		2010-03-08
+					增加对Cisco CME的支持；
+					2、Fix		2010-04-06		【For Testing Only】
+					MC发现IVR错误“Can't CFileVoiceOut::PlayNextGroup() because %s is not playing”：可能是线程无法创建或设备打开失败，对策：
+					[A]增加日志（一旦出现问题，所有通道都不能放音，可能要重启通道甚至PVC）
+					3、New		2010-05-18
+					支持PCS双机热备；
+					4、New		2010-07-07
+					PCSClinetSock增加心跳(KeepLive)主动计时，采用3倍超时，如果长时间检测不到CTI心跳消息，则主动断开并重连；
+					5、Fix		2010-07-16
+					增加CCM::CTIRoutePoint自检返回“LINEERR_INVALLINEHANDLE”时的处理——重新启动TAPI。
+					6、Fix		2010-07-20
+					[A]打开TAPI设备时，如果没有取到语音资源则应该将通道标记为错误，以避免误用；
+					[B]设备重启时不移除设备Map
+					[C]IVRGroup分配电话时，如果通道不够则直接挂断，以免超时挂断事件（默认4秒后）找不到对象；
+					[D]TAPIDisconnect消息挂机改为异步，避免某个IVR线程吊死引起全部TAPI消息处理阻塞；
+					[E]CTI_ErrorHandler增加线程吊死的处理；
+					7、Fix		2010-07-20		【For Testing Only】
+					测试发现磋商时主叫挂断（只是可能）只收到IDLE消息，没有Disconnect，因此增加IsConferenced标记，及时移除任务；
+					8、Update	2010-07-31
+					增加系统参数RoutePointMaxConcurrentCall（CTI路由点最大并发呼叫数），默认为4，越繁忙该值需要越大；
+					9、Update	2010-08-02
+					[A]少数时候由于“PostThreadMessage”丢消息造成CallIn()没有被调用，所以直接在状态改变中调用CallIn()；
+					[B]增加会议磋商失败处理：重复尝试（INI系统参数“CallTransferMaxTryTimes”）、失败移除UMS任务（继续等待）；
+					[C]限制WAVE线程的最大时间；
+					10、Update	2010-08-04
+					增加Reply同步机制；
+					11、Udpated 2010-08-10
+					增加会议磋商失败处理方式参数（[SYSEN][ConferenceFailedMethod]），-1 - 挂断；1 - 继续排队；2 - 做无应答处理
+					12、Update	2010-10-20
+					For Dialogic：实现模拟卡总线搭线（必须是支持SC总线的D卡，如D160、D/4ESC等）
+					13、Fix		2010-10-25
+					解决TTS播报号码过长造成通道超时的问题；
+					14、Fix		2010-11-16
+					修正录音启动（OpenRecord）时对标记的错误判断，造成录音无法开始；
+					15、New		2010-11-22
+					[A]Cchannelcontrol类中ivr_channel_play和ivr_channel_playrecord支持绝对路径放音（根据“:”自动识别）
+					[B]CIVRChannel类中增加播放物理文件的接口（PlayVoiceEx多态）；
+					16、New		2010-12-01
+					[A]SendDTMF除"0-9"外，支持"*#abcd,;&!"
+					[B]“外拨节点”（NF_090）增强号码分析功能，支持拨号后、及分机后的DTMF发送功能，规则：
+					"-"：分隔主号码和分机号，分机号是可选项
+					"+.:"（加，点，冒号）三个字符为延迟分隔符，分别延时1000ms/500ms/200ms，可以组合使用。主号码和分机号中如果有延迟分隔符，则依次延时、拨号。
+					例如：12345678+1,23#.:456#-888++1*+2#，处理方式是：
+					1> 拨主号码：“12345678”
+					2> 延时1000ms，拨“1,23#”
+					3> 延时700ms，拨“456#”
+					4> 等待接通
+					5> 接通后，拨分机号：“888”
+					6> 延时2秒，拨“1*”
+					7> 延时1秒，拨“2#”
+					[C] 2010-12-09: 增加语音卡异步、同步拨号标示，规则适用于主号码和分机拨号：
+					1> CTI接通判别时，一律采用异步拨号；
+					2> 语音卡接通判别时：
+					2.1> 主号码：默认为同步拨号、同步DTMF；分机：默认为异步拨号、异步DTMF；
+					2.2> 拨号字符串第一个字母为“T”，则拨号同步、DTMF同步；
+					2.3> 拨号字符串第一个字母为“H”，则拨号同步、DTMF异步；
+					2.4> 拨号字符串第一个字母为“Y”，则拨号异步、DTMF异步；
+					17、Fix		2011-04-08
+					修正UMS转接等情况下CDR没有记录AppData和UserData的问题；
+
+
+2010-01-08 to 2010-02-04
+V7.1.7.X			1、Update		2010-01-08
+					[A]延长“添加USM任务超时”，从2000ms -> 6000ms；
+					[B]收到“添加USM任务响应”消息后，如果该任务已超时或找不到对象，则应该通知PCS移除之；
+					[C]停止通道前，应该先停止语音操作，以免通道长时间不能停止，造成线程延迟结束，导致复位不成功；
+					[D]如果通道线程异常终止，例行检查应该尝试恢复；
+					2、Fix			2010-02-04
+					解决IVR详单中RingTime字段越界问题；
+					
+
+2008-06-12 to 2009-08-26
+V7.1.6.X			0、Update		2008-06-12
+					纠正MonitorDigits出错时，重起TAPI线路时调用函数错误、造成设备句柄没有更新的错误，并增加了有关日志。
+					1、Fix			2008-06-16
+					[A]CIVRChannel::NF_QueueProcess()中明确“排队时间仅指等待空闲坐席的时间，而不包括等待接听的时间”；
+					[B]纠正：等待应答没有超时，而等待排队却超时了（电话已经会议到坐席，坐席尚未接听），这时电话没有取消会议、重新拾起，造成坐席还能接听，接听后听到超时流程
+					2、Fix			2008-06-20
+					解决问题[QIVR080616]: 外线呼入，IVR磋商到坐席等待应答时，如果外线挂断，IVR能挂断，但坐席还会继续振铃。似乎是TSP处理的问题，造成IVR无法挂断磋商呼叫。同样情况QBE可以挂断。
+					3、Update		2008-06-20
+					[A]当检测到Telephony服务故障需要重新初始化时，应该避免多次初始化；
+					[B]解决重新初始化后，IVR通道没有连接CTI的问题；
+					[C]修正TAPI多次初始化时，IVR通道数量被清0的错误。
+					4、Update		2008-10-27		【For Testing】
+					[A]任务分配请求消息紧跟入队响应消息时存在隐患：标记还没有置为2，造成任务分配请求消息失效。因此，在这里加入1秒延时。
+					[B]CCM时不根据CTI消息设置主被叫，因为线路已经能够取得准确的主被叫；
+					[C]电话呼入时清空部分变量，防止个别异步事件在ResetChData后改变通道变量（如：CallType）
+					[D]防止WaitTime异常大，小于CallLength
+					5、Update		2008-11-16		【For Testing】
+					见骆华军2008-11-14邮件"IVR TTS问题"：使用iFly TTS情况下，即使连接超时时间设置为-1，还是会自动断开连接，科大讯飞建议“如果一个TTS通道空闲时间过长，最好做一下查询参数操作，这样可以保证TTS的连接不断”。
+					因此，在例行处理中如果发现TTS连接空闲时间过长，则调用TTSGetSynthParam。
+					6、Fix			2008-11-17		【For Testing】
+					解决NF_GetUserValue因字符串长度计算错误，取不到变量（如：CampaignID和TaskID）值的问题；
+					7、Update		2008-12-13		【For IKEA CCT】
+					[A] CTI集成时，在没有收到CallIn事件的情况下，如果有Answer事件，则用Answer事件中的数据代替(只有CallRefID,ANI，AppData和UserData肯定没有了)；
+					[B] 同时也可以解决预测拨号没有CallRefID的问题（没有CallIn事件和NetworkReache事件）。
+					8、Fix			2008-12-30		【For Testing CCM】
+					MicroCall发现通道重入问题，即话务量大时（通道数量不够）一个通道会同时分配两个电话，造成TAPI通道状态错误，而且因为呼叫标示不对，通道状态无法在电话挂断后回复。
+					修改两处：
+					[A] 在分配后立即占用，避免重入；
+					[B] Offer消息中，判断TAPI通道状态；
+					9、Fix			2009-02-28		【For Testing CCM】
+					[A] LINE_APPNEWCALL消息在通话中发生，这时要防止覆盖原来的CallHandle；
+					[B] 纠正通话中的连接事件判断（默认排队状态是19，需要排除）
+					10、Fix			2009-04-13		【For Testing CCM】
+					枚举设备时检查是否同名，避免通道重复监控；
+					11、Fix			2009-05-09		【For Testing Dialogic】
+					通道线程调用SetHookOn可能会插入主线程调用SetHookOn，有时会造成主线程死锁（CallClear事件延时不足），因此，挂机操作前增加状态判断
+					12、Fix			2009-06-27		【For Testing Dialogic】
+					异步转接（PCS_ASYN_DIVERT）由条件编译改为参数（AnalogAsynDivert）控制；
+					13、New			2009-07-24		【For SCB Recording】
+					[A] 使用最短录音时长参数（vmsclass仍未使用）；
+					[B] 增加记录录音时间变量；
+					[C] 录音过程中隔一段时间插播提示（Tone），注：仅支持CCM；
+					[D] 录音前的Tone有参数控制；
+					[E] 支持录音中断按键设定；
+					14、Fix			2009-08-26		【For Testing 】
+					IVR通道线程空闲时，检查状态是否为IVR_RUN（OB时容易造成状态不对）
+
+					
+2008-05-29
+V7.1.5.0			Update
+					增加设备空闲自检功能，应用于RoutePoint，防止Windows Telephone服务出错后，得不到通知。
+
+2008-05-23
+V7.1.4.0			Update
+					加入TAPI Line丢失后自动寻找并重新打开处理：CTapiObj::SearchMeOnLost()，
+					对Line和RoutePoint都适用。
+					
+2008-05-16
+V7.1.3.0			Update
+					增加通道创建时间和启动时间记录；
+					更新S_TCP_PCS2IVR_GET_RPTSTATUS_ACK数据结构，更新NF_070节点处理；
+					PowerCallServer和RouteManager必须同步更新，版本要求：
+					PowerCallServer:	V3.4.2.0
+					PowerVoice:			V7.1.3.0
+					RouteManager:		V3.4.1.0
+
+
+2008-01-24 to 2008-01-21
+V7.1.2.X			
+					1、New			2008-01-24
+					NF_023节点放音时增加超时设置。
+					2、New			2008-02-19
+					流程里加一个全局开关，控制是否写节点日志(SData2_000.LogSwitchOff)
+					3、Fix			[2008-04-23]
+					纠正ivr_channel_moneyplay中播放金额的错误；
+
+
+2008-01-12 to 2008-01-21
+V7.1.1.X			
+					1、New			2008-01-12
+					新增tbIVRCDRDetail表，根据节点的Log属性，将节点访问记录在数据库中。
+					2、Fix			2008-01-18
+					解决atof函数的精度问题；
+					3、Update		2008-01-21
+					如果TTS Buffer数据量多，会引起Buffer锁超时，解决办法：
+					1〉Buffer数量不宜过多，建议控制在2-6个，每个Buffer缓存4秒左右语音；
+					2〉根据Buffer数量多少，控制超时时间
+					
+
+2007-10-08 to 2007-12-25
+V7.1.0.X			
+					1、New			2007-10-08
+					与捷通华声TTS集成
+					2、New			2007-10-28
+					TTS参数归一化处理；
+					纠正节点028（TTS放音）中的COM字符串内存泄露问题；
+					3、Update		2007-10-30
+					系统设置对话框的Review
+					4、Update		2007-11-04
+					增加参数是否自动调整通道复位间隔，以减少夜间和话务低谷的复位次数：
+					如果启用，则比较GCTIT“组通道通话最小间隔”，复位间隔需要大于GCTIT的3倍。
+					5、Update		2007-11-18
+					tbIVRCDRMast表中增加CallFlowID字段，记录IVR流程ID
+					6、Update		2007-11-27
+					条件分支节点（NF_016）增加对第二个算子的变量支持，同记录变量节点（NF_102），
+					如果lv_data2.var_value[0] == ':'，则代表此算子是变量。
+					Dialogic支持播放WAV格式文件。
+					修改留言节点对文件格式的选择。
+					.7 New			2007-12-12
+					节点091（Calling Card）支持CCM，以便实现DISA：
+					  注：TAPI外拨信号过程根据LINECALLSTATE（Event=2）判断，
+					      正常：LINECALLSTATE_DIALTONE（0x8）->LINECALLSTATE_DIALING（0x10）->LINECALLSTATE_PROCEEDING（0x200）->LINECALLSTATE_RINGBACK（0x20）->LINECALLSTATE_CONNECTED（0x100）；
+					      遇忙：LINECALLSTATE_DIALTONE（0x8）->LINECALLSTATE_DIALING（0x10）->LINECALLSTATE_PROCEEDING（0x200）->LINECALLSTATE_BUSY（0x40）；
+					      只有在“connected, onHold, proceeding, or ringback”四种状态下才能完成会议。
+					增加系统变量“外拨行动ID（CampaignID）”和“外拨任务ID（TaskID）”；
+					扩大节点028（TTS放音）中输出字符串的长度（1024->2048）；
+					解决Cisco下，IVR Group重新启动后RoutePoint不能打开的错误；
+					. 8 Update		2007-12-25
+					[A].修改ivr_channel_digitplay和ivr_channel_moneyplay支持负值播放；
+					[B].外部模块通信取回数据前，清空扩展数据，避免因返回空值而使用之前的数据；
+					
+
+2007-06-08 to 2007-07-18
+V7.0.0.X			CISCO IP-IVR
+					1、New			2007-06-08
+					开发工具升级到VC++7.0，增加Dialogic TDM和CISCO CCM条件编译选项
+					2、New			2007-06-09
+					增加CTAPIChannel类（IP-语音通道）
+					3、New			2007-07-10
+					IVR排队功能：
+					增加预排队协议和排队控制协议（PCS/IVR/RM）;
+					电话仍然在IVR中，在RM中“假”排队，RM提供EWT和队长；
+					节点NF_063实现；
+					RM预排队可锁定坐席，记录排队详单；
+					IVR转接前可报工号（TTS报名字和工号）；
+					4、New			2007-07-18
+					扩充tbIVRCDRMast表，增加若干字段；
+					5、Fix			2007-10-05
+					按照《Socket客户端连接类紧急更新说明_071005.doc》要求修改Socket客户端类代码，涉及的类包括：
+					[A]. CPCSClientSock, CPCSExtClientSock
+
+========================================================================
+
+2006-04-15 to 2007-05-29
+V6.4.1.X			增加预测等待时间(EWT)查询功能
+					(配合PowerCallServer V3.4版本)
+					1、New			2007-04-15
+					修改节点070（查询路由点）增加var_result属性，增加EWT查询参数选择；
+					修改节点071（查询座席状态），querytype属性中增加查询工号状态选择；
+					增加IVR查询某呼叫在特定路由点的EWT数值消息(可用于排队过程中的状态提示)；
+					2、Fix			2007-05-22
+					参见文档《Socket客户端连接类紧急更新说明_070529.doc》，
+					使用更新的CDataRecorderConnect，并更新CPCSClientSock和CPCSExtClientSock;
+					3、Update		2007-05-29
+					通道应答超时会造成CDR数据不全（无主被叫、CallRefID），原因是板卡信令阻塞复位后才能接听，此时不应该清除CTI数据
+					4、New			2007-06-14
+					Cchannelcontrol::ivr_channel_divert中增加数字卡盲转处理；
+
+
+2006-10-01 to 2007-03-20
+V6.4.0.X			增加IVR传真及时间测试协议
+					1、New
+					[2006-10-01]传真资源管理、传真功能；
+					[2006-11-30]传真接收；
+					2、New
+					[2007-01-16]时间测试协议；
+					3、Update		2007-03-20
+					修改程序中的"Insert"语句，改为"Insert Into"，以支持Oracle数据库插入；
+					节点022（放音等待按键）增加MaxTryTime属性；
+
+
+2006-03-05 to 2006-07-25
+V6.3.2.X			增加IVR监控消息处理
+					1、[2006-03-05]
+					2005-06-02消息处理；
+					2、[2006-03-08]
+					显示全部通道时将奇数组背景颜色区别设置；
+					3、[2006-05-04]
+					IVRCDR和VMSRecord记录数据库时增加SystemID字段；
+					4、[2006-05-26]
+					通过双击通道可对没有登录的通道进行登录操作；
+					5、[2006-07-25]		Debug
+					纠正NF_071节点Pos比较符号错误；
+					6、[2006-09-15]		New
+					增加系统变量ExtData, OBTelNo；
+					外拨流程结束后如果有MainMenu，则记录IVRPDD外拨详单；
+
+
+2005-06-01 to 2006-02-21
+V6.3.1.X			增加IVR监控消息及功能
+					1、[2005-06-02]
+					增加通道状态消息（包括故障报告）；
+					增加流程跳转消息；
+					增加流程控制消息；
+					增加流程、资源加载，及定时加载消息；
+					2、[2005-06-08]
+					用自己的对话框代替Windows的文件对话框；
+					3、[2005-06-20]
+					节点016（条件分支）增加字符串长度判断；
+					节点021（放音继续）增加日期类型（YYYYMMDD）
+					为CallBackMast记录增加Group_No字段，以便分组查询
+					4、[2005-07-10]
+					增加Node70的结构及处理；（RM需要V3.2.0.7）
+					组属性中增加是否是外拨专用组，如果是则不调用gc_waitcall；
+					5、[2005-07-15]				扩展留言功能
+					修改建立留言节点（040），增加“录音附加字段1，2，3”和“录音文件名记录变量”属性；
+					增加留言记录表（tbVMS_Record），节点040（建立留言）时插入记录；
+					6、[2005-07-28]				Fix
+					模拟线转接后可能一直处于Switch状态，这是服务已经结束，因此需进行数据复位
+					7、[2005-08-05]				New
+					tbIVRCDRMast中记录AppData，UserData；
+					8、[2005-08-15]				New
+					节点069，070增加使用变量功能，可通过变量制定转接座席组和查询对象；
+					节点070增加队列、组、小组查询功能；
+					增加节点071（座席状态查询）；
+					9、[2005-08-25]				New
+					节点102(记录变量)增加字符串连接运算；
+					10、[2005-09-01]			Fix
+					修正CIVRChannel::RecFileEx()函数中因为挂机中断录音情况下CallRefID等数据已经清空导致无法记录的错误；
+					11、[2005-09-14]			New
+					留言节点（040）增加最大静音时长(秒)
+					12、[2005-12-06]			New
+					配合PowerCallServer协议变动，如果来电没有接通，则主被叫都送新事件Unring，而不再送CallClear；
+					13、[2005-12-27]			Fix
+					IVR通道例行检查时，对于应答超时的时长由5秒变振铃时长（次数乘4秒/次）为再加5秒；
+					14、[2006-01-06]			Fix
+					解决组修改无法生效的问题，避免重新启动IVR，注意：通道修改仍不能立即生效
+					15、[2006-02-05]			Update
+					更新察看留言节点041，增加修改留言记录表（tbVMS_Record）功能，当察看和删除留言时更新相关纪录；
+					修改删除留言处理方法，不删除文件而是修改文件名（文件名前加x作为删除标记）。
+					16、[2006-02-08]			New
+					更新察看留言节点041，增加留言存档功能，
+					可按全部、有效（新的和存档的留言）、新留言（缺省）、存档留言、删除留言分别察看，
+					并可转换类型新留言->存档/删除；存档<->删除；
+					17、[2006-02-10]			New
+					更新节点023：放音转移，增加变量放音功能；
+					18、[2006-02-16]			New
+					增加UserData系统变量，及有关处理；
+					19、[2006-02-20]			New
+					增加第二个双音频、单音频挂断音参数组；
+					20、[2006-02-21]			New
+					通道、组呼叫统计，通过WorkDataResetTime系统参数控制每日数据清空时间；
+					界面显示通道、组呼叫统计，显示流程加载时间；
+
+
+2005-05-24 to 2005-05-30
+V6.2.2.X			支持Calling Card
+					1、[2005-05-24]
+					增加Node91的结构；
+					2、[2005-05-26]
+					增加Node91的处理；
+					3、[2005-05-27]
+					增加sc_channel_link等处理；
+					IVR详单记录LanguageID，系统变量保存为字符型；
+					记录ACCS详单；
+					4、[2005-05-30]
+					语音卡外拨函数中增加数字通道外拨处理(ivr_channel_dailout)；
+
+
+2005-03-11 to 2005-04-01
+V6.2.1.X			为锦江项目做功能扩展
+					1、[2005-03-11]
+					修改Node90的结构；
+					2、[2005-03-15]
+					修改TTS（028）节点，PlayType定义；
+					增加Node96的结构；
+					3、[2005-03-16]
+					增加对Node96的处理；
+					4、[2005-03-17]
+					系统设置中增加外部模块页面及有关参数；
+					完成Node96节点的处理代码；
+					5、[2005-03-24]
+					完成Node90节点的处理代码；
+					增加IVR外拨协议；
+					语音卡封装类中增加发送DTMF函数(ivr_channel_sendDTMF)；
+					语音卡封装类中增加外拨函数(ivr_channel_dailout)；
+					[2005-04-01]
+					修正主线程中超时错误
+
+
+2005-01-20 to 2005-02-06
+V6.2.0.X			根据大众19日故障报告做以下修正
+					1、18日日志，12:00:15时号码80017，出现进行后遇线路告警（GCEV_ALARM:#862, 全部30条），自动恢复，OK
+					2、12:33:36开始不停出现TaskFail事件，事件信息代码为0，直到58秒对方挂机才停止，
+					因此，屏蔽此代码下的处理（不做复位）
+					3、14:11:24进线出现FatalError，EH很慢（挂机后才完成），但没有WaitCall，此后该通道始终不正常，
+					一直在AnswerTimeout，期间偶尔有几次WaitCall成功，也接起电话，但之后仍然有错误，最后造成通道例行处理线程挂起，
+					因此，FatalError处理时置特殊错误标记，通道暂时不用(CTI_SetChannelError)，如果能自动恢复（WaitCall成功）则重新注册通道；
+					如果错误无法恢复，则停止IVR。
+					4、[2005-01-21]
+					IVR通道注册延时：启动时不要马上登录以免初始化失败。
+					5、[2005-02-06]
+					Release 版本无法正常运行，因此掉所有Release设置，读lic时、退出时均不区分_DEBUG条件
+
+
+2004-12-31
+V6.2.0.1
+					1、CIVRChannel::CTI_ErrorHandler中处理关闭通道错误，
+					将该通道置为错误状态，然后从ACD中登出，
+					此错误需要手动重启IVR回复
+
+2004-12-30
+V6.2.0				1、支持InterPhonic TTS
+					2、21节点支持播放字母（字母加号码）
+                    3、增加节点016（条件分支）
+					4、增强节点018（发送数据），每个流程可设定自己缺省的数据格式，转接前亦可设定特定格式
+					5、增强节点102（变量修改），增加字符串处理
+					6、定时加载流程、资源
+					// ToDo:
+                    7、修改节点061，增加ACD、RoutePoint查询
+					
+
+2004-11-20
+V6.1.0				1、模拟转接拨号时Flash时长参数化
+					2、应用新的DataRecorder类
+					3、添加查询路由点状态消息
+					4、应用许可文件
+
+========================================================================
+2004-09-14			为解决通道线程占用问题，打开模拟线路的例行检查
+
+2004-08-24			增加最大通话时间限制参数，在节点转移处判断
+
+2004-08-07			主线程错误恢复：有时会出现主线程（进行进度条、CTI挂机、通道例检等）停止，
+					原因不明！

@@ -1,0 +1,2179 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PowerVoice.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\PowerVoice.ICO"
+IDI_Error               ICON                    "res\\stop.ICO"
+IDI_Ready               ICON                    "res\\ready.ICO"
+IDI_Start               ICON                    "res\\start.ICO"
+IDI_Stop                ICON                    "res\\error.ICO"
+IDI_SYSERROR            ICON                    "res\\icon1.ico"
+IDI_SYSSTOP             ICON                    "res\\ico00001.ico"
+IDI_SYSREADY            ICON                    "res\\ico00002.ico"
+IDI_MyOK                ICON                    "res\\ok.ico"
+IDI_MyCancle            ICON                    "res\\cancel.ico"
+IDI_OPT_CHANNELS        ICON                    "res\\ico00008.ico"
+IDI_OPT_PBX             ICON                    "res\\075.ico"
+IDI_OPT_SYSTEM          ICON                    "res\\Agent.ico"
+IDI_LICENSE_ICON        ICON                    "res\\Document.ico"
+IDI_OPT_EXTERNAL        ICON                    "res\\096.ico"
+IDI_SYSHALFREADY1       ICON                    "res\\ico00007.ico"
+IDI_SYSHALFREADY2       ICON                    "res\\sysstop1.ico"
+IDI_SYSHALFREADY3       ICON                    "res\\ico00011.ico"
+IDI_SYSHALFREADY4       ICON                    "res\\ico00012.ico"
+IDI_SYSBOTHREADY1       ICON                    "res\\ico00014.ico"
+IDI_SYSBOTHREADY2       ICON                    "res\\ico00015.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_SPLASH              BITMAP                  "Splsh16.bmp"
+IDB_LOGO_PICASOFT       BITMAP                  "res\\logo_small.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_LOAD_FILE
+    BUTTON      ID_FILE_LOAD_DB
+    BUTTON      ID_FILE_LOAD_RESOURCE
+    BUTTON      ID_FILE_CONFIG
+    SEPARATOR
+    BUTTON      ID_EXE_START
+    BUTTON      ID_EXE_STOP
+    BUTTON      ID_EXE_RESTART
+    SEPARATOR
+    BUTTON      ID_VIEW_ALL_CH
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "加载文件(&F)...\tCtrl+F",     ID_FILE_LOAD_FILE
+        MENUITEM "加载数据(&D)...\tCtrl+D",     ID_FILE_LOAD_DB
+        MENUITEM "工作资源(R)...\tCtrl+R",      ID_FILE_LOAD_RESOURCE
+        MENUITEM SEPARATOR
+        MENUITEM "系统配置(&C)...",             ID_FILE_CONFIG
+        MENUITEM SEPARATOR
+        MENUITEM "定时加载流程(&N)...",         IDM_FILE_TIMER_LD_CF
+        MENUITEM "定时加载资源(&T)...",         IDM_FILE_TIMER_LD_RES
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "执行(&E)"
+    BEGIN
+        MENUITEM "启动(&S)\tCtrl+S",            ID_EXE_START
+        MENUITEM "停止(&T)\tCtrl+T",            ID_EXE_STOP
+        MENUITEM "重启(&R)\tCtrl+R",            ID_EXE_RESTART
+        MENUITEM SEPARATOR
+        MENUITEM "全启动",                      ID_EXE_START_ALL
+        MENUITEM "全停止",                      ID_EXE_STOP_ALL
+        MENUITEM "全重启",                      ID_EXE_RESTART_ALL
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "所有通道",                    ID_VIEW_ALL_CH
+        MENUITEM "紧缩显示",                    ID_VIEW_REPORT
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "查看许可信息(&L)",            IDM_VIEW_LIC_INFO
+        MENUITEM "截断数据日志(&T)",            IDM_TRUNK_SQLLOG
+        MENUITEM SEPARATOR
+        MENUITEM "关于 PowerVoice(&A)...",      ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_MENU MENU 
+BEGIN
+    POPUP "popupmenu"
+    BEGIN
+        MENUITEM "打开...",                     IDM_RESTORE
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                        IDM_EXIT
+    END
+END
+
+IDR_POPMENU_CH MENU 
+BEGIN
+    POPUP "popm ch"
+    BEGIN
+        MENUITEM "通道复位",                    ID_MenuCh_Reset
+        MENUITEM "通告重启",                    ID_MenuCh_Restart
+        MENUITEM SEPARATOR
+        MENUITEM "外拨测试",                    ID_MenuCh_OBTes
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 256, 97
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 PowerVoice"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,5,20,20
+    LTEXT           "PowerVoice 1.1 版",IDC_VERSION,32,17,219,16,SS_NOPREFIX
+    LTEXT           "苏州工业园区独墅湖高教区东平街288号\n盈联国际外包中心\n电话：86-512-62991226\n传真：86-512-62875738",
+                    IDC_STATIC,6,45,190,37
+    DEFPUSHBUTTON   "确定",IDOK,205,56,51,40,WS_GROUP
+    LTEXT           "http://www.pcsg.net",IDC_LINK,7,82,191,11,SS_NOPREFIX
+    LTEXT           "盈联PowerVoice IP-IVR系统",IDC_VERSION2,32,5,219,10,
+                    SS_NOPREFIX
+    LTEXT           "苏州盈联互动数码有限公司 版权所有(C) 2006-2012",
+                    IDC_STATIC,6,34,247,11
+END
+
+IDD_CONFIG DIALOGEX 0, 0, 383, 245
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数设置"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_PLACEHOLDER,73,5,305,211
+    PUSHBUTTON      "恢复",IDRESET,155,223,50,14
+    DEFPUSHBUTTON   "确定",IDOK,208,223,50,14
+    PUSHBUTTON      "取消",IDCANCEL,261,223,50,14
+    PUSHBUTTON      "应用",IDAPPLY,314,223,50,14
+    CONTROL         "Tree1",IDC_TREE_OPT,"SysTreeView32",TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_TABSTOP,4,9,64,207,
+                    WS_EX_STATICEDGE
+END
+
+IDD_BROWSEPATH DIALOG  0, 0, 292, 143
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择目录"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LST_FILEVIEW,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,2,4,161,134
+    COMBOBOX        IDC_CMB_DRIVERS,167,4,121,58,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Tree1",IDC_TRE_DIR,"SysTreeView32",TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,167,19,121,99
+    DEFPUSHBUTTON   "确定",IDOK,184,124,50,14
+    PUSHBUTTON      "取消",IDCANCEL,238,124,50,14
+END
+
+IDD_SELECALLFLOWFILE DIALOG  0, 0, 187, 100
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择流程文件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,130,7,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,24,50,14
+END
+
+IDD_SELECALLFLOWTABLE DIALOG  0, 0, 252, 139
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择流程数据项目"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,144,121,50,14
+    PUSHBUTTON      "取消",IDCANCEL,198,121,50,14
+    COMBOBOX        IDC_CMB_CALLFLOW,4,4,244,112,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SELERESOURCE DIALOG  0, 0, 252, 139
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择工作资源"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,144,121,50,14
+    PUSHBUTTON      "取消",IDCANCEL,198,121,50,14
+    COMBOBOX        IDC_CMB_RESOURCE,4,4,244,113,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PAGE_SYS DIALOGEX 0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "数据库",IDC_SYS_FRAME2,5,6,138,88
+    CONTROL         "OLE DB",IDC_OPT_DB_TYPE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,12,19,39,8
+    CONTROL         "ODBC",IDC_OPT_DB_TYPE2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,57,19,37,8
+    CONTROL         "不使用",IDC_OPT_DB_TYPE3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,99,19,37,8
+    LTEXT           "数据库服务器",IDC_SYS_LBL_DB_SERVER,13,34,53,12
+    EDITTEXT        IDC_SYS_DBSERVER,71,32,64,12,ES_AUTOHSCROLL
+    LTEXT           "数据库名称",IDC_SYS_LBL_DB_DBNAME,13,48,53,12
+    EDITTEXT        IDC_SYS_DBNAME,71,46,64,12,ES_AUTOHSCROLL
+    LTEXT           "用户名",IDC_SYS_LBL_DB_USERID,14,62,53,10
+    EDITTEXT        IDC_SYS_DBUSERID,71,60,64,12,ES_AUTOHSCROLL
+    LTEXT           "访问口令",IDC_SYS_LBL_DB_PWD,13,76,53,10
+    EDITTEXT        IDC_SYS_DBPassword,71,74,64,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "通信",IDC_SYS_FRAME3,148,6,146,88
+    LTEXT           "CTI 服务器IP",IDC_SYS_STATIC4,156,20,54,10
+    CONTROL         "IPAddress1",IDC_SYS_CTIIP,"SysIPAddress32",WS_TABSTOP,
+                    215,18,72,12
+    LTEXT           "CTI 侦听端口",IDC_SYS_STATIC5,156,33,54,10
+    EDITTEXT        IDC_SYS_CTIPORT,215,31,72,12,ES_AUTOHSCROLL
+    LTEXT           "数据记录IP",IDC_SYS_STATIC8,156,48,54,10
+    CONTROL         "IPAddress1",IDC_SYS_DRIP,"SysIPAddress32",WS_TABSTOP,
+                    215,46,72,12
+    LTEXT           "数据记录端口",IDC_SYS_STATIC9,156,61,54,10
+    EDITTEXT        IDC_SYS_DRPORT,215,59,72,12,ES_AUTOHSCROLL
+    LTEXT           "日志记录级别",IDC_SYS_STATIC10,155,76,54,10
+    COMBOBOX        IDC_CMB_LOG,215,74,72,68,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "信令控制",IDC_STATIC,5,99,290,30
+    CONTROL         "使用Global Call     协议",IDC_CHK_GC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,112,116,10
+    EDITTEXT        IDC_SYS_PROTOCOL,134,111,153,12,ES_AUTOHSCROLL
+    GROUPBOX        "其它",IDC_SYS_FRAME4,5,135,289,60
+    LTEXT           "系统资源目录",IDC_SYS_STATIC6,13,149,59,12
+    EDITTEXT        IDC_SYS_VOXPATH,77,147,195,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "…",IDC_SYS_SEARCH1,274,147,13,12
+    LTEXT           "系统留言目录",IDC_SYS_STATIC7,13,162,59,12
+    EDITTEXT        IDC_SYS_RECPATH,77,160,195,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "…",IDC_SYS_SEARCH2,274,160,13,12
+    LTEXT           "通道应答延时",IDC_PBX_STATIC1,13,176,59,12
+    EDITTEXT        IDC_SYS_CH_ANS_DELAY,77,174,25,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SYS_SPN_ANS_DELAY,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,102,174,
+                    11,12
+    LTEXT           "毫秒",IDC_PBX_STATIC6,116,176,25,12
+    LTEXT           "通道复位时间",IDC_PBX_STATIC2,140,176,49,12
+    EDITTEXT        IDC_SYS_CH_RESET_DELAY,194,174,25,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SYS_SPN_RESET_DELAY,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,218,174,
+                    11,12
+    LTEXT           "分钟",IDC_PBX_STATIC7,232,176,22,12
+    CONTROL         "自适应",IDC_CHK_AUTOCAL_RESETTIME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,252,176,39,9
+END
+
+IDD_PAGE_PBX DIALOG  0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 9, "宋体"
+BEGIN
+    CTEXT           "参数",IDC_PBX_STATIC9,7,7,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "LCL",IDC_PBX_STATIC10,7,18,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "最大语音时长",IDC_PBX_STATIC1,7,151,58,11
+    EDITTEXT        IDC_PBX_FREQ1,40,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA1,68,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB1,96,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB1,124,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME1,152,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA1,180,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME1,208,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA1,236,18,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT1,264,18,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "INTL",IDC_PBX_STATIC11,7,29,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ2,40,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA2,68,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB2,96,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB2,124,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME2,152,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA2,180,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME2,208,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA2,236,29,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT2,264,29,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "XTRA",IDC_PBX_STATIC12,7,40,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ3,40,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA3,68,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB3,96,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB3,124,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME3,152,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA3,180,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME3,208,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA3,236,39,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT3,264,39,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "BUSY1",IDC_PBX_STATIC13,7,51,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ4,40,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA4,68,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB4,96,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB4,124,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME4,152,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA4,180,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME4,208,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA4,236,51,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT4,264,51,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "BUSY2",IDC_PBX_STATIC14,7,62,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ5,40,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA5,68,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB5,96,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB5,124,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME5,152,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA5,180,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME5,208,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA5,236,61,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT5,264,61,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "RNGBK1",IDC_PBX_STATIC15,7,73,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ6,40,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA6,68,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB6,96,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB6,124,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME6,152,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA6,180,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME6,208,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA6,236,73,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT6,264,73,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "RNGBK2",IDC_PBX_STATIC16,7,84,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ7,40,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA7,68,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB7,96,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB7,124,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME7,152,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA7,180,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME7,208,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA7,236,83,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT7,264,83,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "FAX1",IDC_PBX_STATIC17,7,95,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ8,40,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA8,68,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB8,96,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB8,124,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME8,152,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA8,180,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME8,208,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA8,236,95,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT8,264,95,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "FAX2",IDC_PBX_STATIC18,7,106,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ9,40,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA9,68,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB9,96,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB9,124,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME9,152,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA9,180,105,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME9,208,105,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA9,236,105,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT9,264,105,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "DISC DT",IDC_PBX_STATIC19,7,117,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ10,40,117,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA10,68,117,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB10,96,117,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB10,124,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME10,152,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA10,180,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME10,208,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA10,236,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT10,264,117,27,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CTEXT           "DISC ST",IDC_PBX_STATIC20,7,128,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ11,40,128,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA11,68,128,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB11,96,128,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_PBX_DELTAB11,124,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_PBX_ONTIME11,152,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA11,180,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME11,208,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA11,236,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT11,264,128,27,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_SOUNDTIME,69,149,30,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PBX_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,99,149,11,12
+    LTEXT           "秒",IDC_PBX_STATIC6,114,151,17,12
+    LTEXT           "摘机前响铃次数",IDC_PBX_STATIC3,134,151,66,12
+    EDITTEXT        IDC_PBX_RINGS,205,149,30,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PBX_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,235,149,11,12
+    LTEXT           "声",IDC_PBX_STATIC8,251,151,14,12
+    LTEXT           "最大等待时长",IDC_PBX_STATIC2,7,171,57,11
+    EDITTEXT        IDC_PBX_WAITTIME,69,169,30,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PBX_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,99,169,11,12
+    LTEXT           "秒",IDC_PBX_STATIC7,114,172,17,12
+    LTEXT           "通道音量 -10",IDC_PBX_STATIC4,134,171,54,12
+    CONTROL         "Slider1",IDC_PBX_VOLUMN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,189,165,79,22
+    LTEXT           "10db",IDC_PBX_STATIC5,271,172,22,11
+    CTEXT           "频率1",IDC_PBX_STATIC21,40,7,28,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "频偏1",IDC_PBX_STATIC22,67,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "频率2",IDC_PBX_STATIC23,96,7,28,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "频偏2",IDC_PBX_STATIC24,123,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "开时间",IDC_PBX_STATIC25,152,7,28,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "偏差",IDC_PBX_STATIC26,179,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "关时间",IDC_PBX_STATIC27,207,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "偏差",IDC_PBX_STATIC28,235,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "重复",IDC_PBX_STATIC29,264,7,27,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+END
+
+IDD_PAGE_GROUP DIALOG  0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "工作组数量",IDC_IVR_STATIC1,9,9,52,10
+    EDITTEXT        IDC_IVR_GROUPS,66,7,28,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,94,7,11,12
+    LTEXT           "通道数量",IDC_IVR_STATIC2,125,9,46,10
+    EDITTEXT        IDC_IVR_CHANNELS,176,7,28,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,204,7,11,12
+    LISTBOX         IDC_IVR_GROUPLIST,9,22,207,104,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "标题",IDC_IVR_STATIC4,9,132,37,11
+    EDITTEXT        IDC_IVR_CAPTION,51,130,164,12,ES_AUTOHSCROLL
+    LTEXT           "起始通道",IDC_IVR_STATIC5,9,149,37,11
+    EDITTEXT        IDC_IVR_STARTCH,51,147,22,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,73,147,11,12
+    CONTROL         "有效",IDC_GROUPENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,149,37,9
+    LTEXT           "终止通道",IDC_IVR_STATIC6,9,164,37,11
+    EDITTEXT        IDC_IVR_ENDCH,51,162,22,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,73,162,11,12
+    CONTROL         "连接CTI",IDC_GROUPCTI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,162,50,9
+    CONTROL         "仅用于外拨",IDC_GROUPOBONLY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,174,60,9
+    LISTBOX         IDC_IVR_CHLIST,222,7,69,177,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "通道ID",IDC_IVR_STATIC3,133,149,32,11
+    EDITTEXT        IDC_IVR_DN,170,147,46,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "修改",IDMODIFY,166,170,50,14
+END
+
+IDD_DLG_GETPASSWORD DIALOG  0, 0, 96, 45
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请输入口令"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_TXT_PASSWORD,6,5,85,14,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,5,24,40,16
+    PUSHBUTTON      "取消",IDCANCEL,51,24,40,16
+END
+
+IDD_DLG_LICENSEINFO DIALOGEX 0, 0, 287, 259
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "许可信息"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_TXT_SERVERMAC,106,197,175,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        IDC_TXT_SERVERHDSN,106,214,175,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "确定",IDOK,125,234,40,17
+    ICON            IDI_LICENSE_ICON,IDC_STATIC,12,8,20,20
+    LTEXT           "软件名称：",IDC_STATIC,43,13,49,10
+    LTEXT           "授权用户：",IDC_STATIC,43,30,49,10
+    LTEXT           "发放时间：",IDC_STATIC,43,47,49,10
+    CTEXT           "Power Voice",IDC_ST_ProdutcName,106,9,175,15,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CTEXT           "Power Voice",IDC_ST_UserIdentification,106,26,175,15,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CTEXT           "2004-05-01 18:00:00",IDC_ST_LICENSEDATE,106,43,175,15,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,1,60,285,9
+    LTEXT           "授权服务器MAC地址：",IDC_STATIC,7,80,94,10
+    CTEXT           "10-10-10-10-10-10",IDC_ST_SERVERMAC,106,76,175,15,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           "授权服务器硬盘序列号：",IDC_STATIC,7,97,94,10
+    LTEXT           "IVR通道组许可数量：",IDC_STATIC,7,114,94,10
+    CTEXT           "1234567890",IDC_ST_SERVERHDSN,106,93,175,15,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           "IVR通道许可数量：",IDC_STATIC,7,131,94,10
+    CTEXT           "1",IDC_ST_LICENSE2,106,127,175,15,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "文本转语音(TTS) Lic：",IDC_STATIC,7,147,94,11
+    CTEXT           "0",IDC_ST_LICENSE3,106,144,175,15,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "自动语音识别(ASR) Lic：",IDC_STATIC,7,165,94,11
+    CTEXT           "0",IDC_ST_LICENSE4,106,162,175,15,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,1,179,285,9
+    LTEXT           "当前服务器MAC地址：",IDC_STATIC,7,199,91,10
+    LTEXT           "当前服务器硬盘序列号：",IDC_STATIC,7,216,91,10
+    CTEXT           "1",IDC_ST_LICENSE1,106,110,175,15,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+END
+
+IDD_DLG_AUTO_RESOURCE DIALOG  0, 0, 268, 198
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "定时加载资源"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,74,177,50,14
+    PUSHBUTTON      "取消",IDCANCEL,132,177,50,14
+    GROUPBOX        "允许自动加载资源，在",IDC_GRP_ENABLED,5,5,258,167
+    CONTROL         "DateTimePicker1",IDC_LOG_DAY_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,23,20,65,14
+    CONTROL         "DateTimePicker2",IDC_LOG_TIME_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,95,20,69,
+                    14
+    LTEXT           "请从下面的列表中选择要定时加载的资源",IDC_STATIC,14,41,
+                    203,10
+    COMBOBOX        IDC_CMB_RESOURCE,12,54,244,113,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_AUTO_CALLFLOW DIALOG  0, 0, 295, 215
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "定时加载流程"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,95,195,50,14
+    PUSHBUTTON      "取消",IDCANCEL,151,195,50,14
+    GROUPBOX        "允许自动加载流程，在",IDC_GRP_ENABLED,5,5,286,184
+    CONTROL         "DateTimePicker1",IDC_LOG_DAY_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,23,20,65,14
+    CONTROL         "DateTimePicker2",IDC_LOG_TIME_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,95,20,69,
+                    14
+    CONTROL         "从文件",IDC_OPT_SOURCE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,17,42,52,10
+    CONTROL         "或者从下面的列表中选择要定时加载的流程",IDC_OPT_SOURCE2,
+                    "Button",BS_AUTORADIOBUTTON,17,57,205,10
+    EDITTEXT        IDC_TXT_FILE,74,41,195,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "…",IDC_BTN_BROWSE,271,41,13,12
+    COMBOBOX        IDC_CMB_CALLFLOW,12,71,272,113,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PAGE_EXT DIALOGEX 0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "外部通信接口",IDC_EXT_EXTSYS,5,6,290,31,WS_TABSTOP
+    LTEXT           "服务器IP",IDC_SYS_STATIC4,13,20,54,10
+    CONTROL         "IPAddress1",IDC_SYS_EXTIP,"SysIPAddress32",WS_TABSTOP,
+                    72,18,72,12
+    LTEXT           "侦听端口",IDC_SYS_STATIC5,193,20,54,10
+    EDITTEXT        IDC_SYS_EXTPORT,253,18,34,12,ES_AUTOHSCROLL
+    GROUPBOX        "TTS",IDC_EXT_TTS,5,42,290,105,WS_TABSTOP
+    LTEXT           "服务器IP",IDC_SYS_STATIC6,13,56,54,10
+    CONTROL         "IPAddress1",IDC_SYS_TTSIP,"SysIPAddress32",WS_TABSTOP,
+                    72,54,72,12
+    LTEXT           "侦听端口",IDC_SYS_STATIC7,193,56,54,10
+    EDITTEXT        IDC_SYS_TTSPORT,253,54,34,12,ES_AUTOHSCROLL
+    LTEXT           "产品序列号",IDC_SYS_STATIC11,13,71,54,10
+    EDITTEXT        IDC_SYS_TTSSN,72,69,215,12,ES_AUTOHSCROLL
+    LTEXT           "输出缓冲区",IDC_SYS_STATIC12,12,86,54,10
+    EDITTEXT        IDC_SYS_TTSBufferSize,72,84,34,12,ES_AUTOHSCROLL
+    LTEXT           "KB",IDC_SYS_STATIC13,111,86,15,10
+    LTEXT           "缓冲区数量",IDC_SYS_STATIC14,194,86,54,10
+    EDITTEXT        IDC_SYS_TTSBufferCount,254,84,34,12,ES_AUTOHSCROLL
+    LTEXT           "语音库编号",IDC_SYS_STATIC15,12,106,54,10
+    LTEXT           "合成语速  -10",IDC_SYS_STATIC16,123,106,64,10
+    LTEXT           "输出音量  -10",IDC_SYS_STATIC17,12,126,56,10
+    LTEXT           "音高  -10",IDC_SYS_STATIC18,160,126,43,10
+    EDITTEXT        IDC_SYS_TTSVID,72,104,34,12,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_SYS_TTSSPEED,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,186,101,79,22
+    LTEXT           "10",IDC_PBX_STATIC5,268,105,22,11
+    CONTROL         "Slider1",IDC_SYS_TTSVOLUME,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,68,122,70,22
+    LTEXT           "10",IDC_PBX_STATIC9,140,126,11,11
+    CONTROL         "Slider1",IDC_SYS_TTSPITCH,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,203,122,70,22
+    LTEXT           "10",IDC_PBX_STATIC30,275,125,15,11
+    GROUPBOX        "ASR",IDC_EXT_ASR,5,152,290,31,WS_TABSTOP
+    LTEXT           "服务器IP",IDC_SYS_STATIC8,13,166,54,10
+    CONTROL         "IPAddress1",IDC_SYS_ASRIP,"SysIPAddress32",WS_TABSTOP,
+                    72,164,72,12
+    LTEXT           "侦听端口",IDC_SYS_STATIC9,193,166,54,10
+    EDITTEXT        IDC_SYS_ASRPORT,253,164,34,12,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 7,4,1,9
+ PRODUCTVERSION 7,4,1,9
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x29L
+#else
+ FILEFLAGS 0x28L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "TDM & IP IVR"
+            VALUE "CompanyName", "苏州盈联智能科技股份有限公司"
+            VALUE "FileDescription", "PowerVoice Microsoft 基础类应用程序"
+            VALUE "FileVersion", "7, 4, 1, 9"
+            VALUE "InternalName", "PowerVoice - By Tony Sun (Baoshi Sun)"
+            VALUE "LegalCopyright", "版权所有 (C) 2000 - 2013"
+            VALUE "LegalTrademarks", "www.smartac.co, www.picasoft.net"
+            VALUE "OriginalFilename", "PowerVoice.EXE"
+            VALUE "PrivateBuild", "7.4c 简体中文版"
+            VALUE "ProductName", "PowerVoice IVRS"
+            VALUE "ProductVersion", "7, 4, 1, 9"
+            VALUE "SpecialBuild", "Support Cisco CCM, CUCM, CME & Dialogic, support multi-tenant"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        RIGHTMARGIN, 253
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        TOPMARGIN, 5
+    END
+
+    IDD_BROWSEPATH, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 288
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_SELECALLFLOWFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_SELECALLFLOWTABLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 248
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_SELERESOURCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 248
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 135
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR                  "res\\hand.cur"
+IDC_WAITCUR             CURSOR                  "res\\busy_m.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_SOCKETS_INIT_FAILED "Windows 通信端口初始化失败。"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "PowerVoice\n\nPowerV\nPowerV 文件 (*.pvc)\n.pvc\nPowerVoice.Document\nPowerV Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "PowerVoice"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "显示本程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出PowerVoice IVR系统\n退出"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_LOAD_DB         "从数据库中加载指定流程\n加载流程表"
+    ID_FILE_CONFIG          "设定IVR系统工作参数\n设定系统参数"
+    ID_FILE_LOAD_FILE       "从IVR流程文件(*.pvc)中加载流程\n加载流程文件"
+    ID_EXE_START            "启动当前IVR工作组\n启动当前组"
+    ID_EXE_STOP             "停止当前IVR工作组\n停止当前组"
+    ID_EXE_RESTART          "重新启动当前IVR工作组\n重新启动当前组"
+    ID_EXE_START_ALL        "启动所有IVR工作组\n启动所有组"
+    ID_EXE_STOP_ALL         "停止所有IVR工作组\n停止所有组"
+    ID_EXE_RESTART_ALL      "重新启动所有IVR工作组\n重新启动所有组"
+    ID_VIEW_ALL_CH          "显示所有通道或当前工作组内的通道\n所有或当前组通道"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PROGRESSBAR         "ID for Progress Bar Control"
+    IDC_STATICSYS           " "
+    IDC_STATICDB            " "
+    IDC_STATICCOM           " "
+    IDC_STATICHW            " "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INDICATOR_SYS       "                                                                                                                                                                                                      系统状态"
+    IDS_INDICATOR_DB        "                                                                                                                                                                                                      数据库状态"
+    IDS_INDICATOR_COMM      "                                                                                                                                                                                                      通讯状态"
+    IDS_INDICATOR_HW        "                                                                                                                                                                                                      硬件状态"
+    IDS_MSG_Q_EXITAPP       "警告：退出本程序将导致相应客户端无法正常工作，是否继续？"
+    IDS_INDICATOR_PROGRESS  "                                                                                                                                                                                                                                                                                                                                                                                                                   主工作线程                                                                                                                                                                                                                    "
+    IDS_MSG_Q_STOPGROUP     "本操作将停止当前工作组，是否继续？"
+    IDS_MSG_Q_RESTARTGROUP  "本操作将停止并重新启动当前工作组，是否继续？"
+    IDS_MSG_Q_STOPALL       "本操作将停止所有正在工作的工作组，是否继续？"
+    IDS_MSG_Q_STARTALL      "本操作将启动所有尚未启动的工作组，是否继续？"
+    IDS_MSG_Q_RESTARTALL    "本操作将停止并重新启动所有工作组，是否继续？"
+    IDS_MSG_E_ALREADY_RUN   "Power Voice已经启动了一个应用！"
+    IDS_ABOUTME_CAPTION     "关于"
+    IDS_CAP_BTN_OK          "确定"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_LOAD_RESOURCE   "重新加载工作资源到指定组\n加载工作资源"
+    IDM_VIEW_LIC_INFO       "查看软件许可信息"
+    IDM_TRUNK_SQLLOG        "截断当前数据日志，新建日志文件"
+    IDM_FILE_TIMER_LD_CF    "定时加载IVR流程\n定时加载流程"
+    IDM_FILE_TIMER_LD_RES   "定时加载工作资源\n定时加载工作资源"
+    ID_VIEW_REPORT          "按紧缩方式显示通道\n紧缩方式显示通道"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CAP_IVRCH_CTI_ST    "CTI 监控"
+    IDS_CAP_IVRCH_CTI_DISABLE "不使用"
+    IDS_CAP_IVRCH_CTI_MONITOR_ERROR "不受控"
+    IDS_CAP_IVRCH_CTI_MONITOR_OK "受控"
+    IDS_MSG_NEED_RESTART    "需要重新启动PowerVoice，新参数才能生效！"
+    IDS_MSG_NEEDNOT_RESTART "新参数已经生效！"
+    IDS_MSG_WRONG_NEWSETTING "新参数无法生效, 请确认后重试！"
+    IDS_MSG_SAVED_NEWSETTING "新参数保存成功！"
+    IDS_MSG_UNSAVED_NEWSETTING "新参数保存失败！"
+    IDS_MSG_Q_DISCARD_CHANGES "本操作将放弃已做的修改, 是否继续？"
+    IDS_RESTART_POWERVOICE  "由于内部原因，系统需要重新启动！"
+    IDS_OPT_SYSTEM          "系统"
+    IDS_OPT_PBX             "交换机"
+    IDS_OPT_CHANNELS        "通道"
+    IDS_MSG_Q_TRUNCATE_LOG  "是否要截断数据日志？"
+    IDS_MSG_Q_UPDATE_SCH_CF "是否要更新流程加载计划？"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MAILADDRESS         "tony.sun@pcsg.net"
+    IDS_MAILTOTIP           "更多服务..."
+    IDS_CAP_IVRGR_GROUPNO   "组号"
+    IDS_CAP_IVRGR_CAPTION   "标题"
+    IDS_CAP_IVRGR_CURIVR    "节目"
+    IDS_CAP_IVRGR_RESID     "资源"
+    IDS_CAP_IVRGR_STARTCH   "起始通道"
+    IDS_CAP_IVRGR_ENDCH     "终止通道"
+    IDS_CAP_IVRGR_CTIST     "CTI 集成"
+    IDS_CAP_IVRGP_DEFAULT_CF "缺省工作流程"
+    IDS_CAP_IVRGP_CTI_NOUSE "不使用"
+    IDS_CAP_IVRGR_CALLCOUNT "当日/累积呼叫"
+    IDS_CAP_IVRGP_CTI_CONNECT "使用"
+    IDS_CAP_IVRGR_LASTLOADTIME "节目最后更新时间"
+    IDS_MSG_M_LOADCF_OK     "加载呼叫流程成功！"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MSG_M_LOADCF_FAIL   "加载呼叫流程失败, 请检查数据完整性！缺省流程生效！"
+    IDS_MSG_M_LOADCF_ERROR  "加载呼叫流程失败, 请检查相关系统设置！"
+    IDS_MSG_E_NEED_GC_PROTOCOL "没有设置GlobalCall网络协议，请检查!"
+    IDS_MSG_M_LOADRES_OK    "更新工作资源成功！"
+    IDS_MSG_M_LOADRES_FAIL  "更新工作资源失败, 请检查相关系统设置！"
+    IDS_CAP_IVRCH_CHANNELNO "通道号"
+    IDS_CAP_IVRCH_STATUS    "状态"
+    IDS_CAP_IVRCH_DURATION  "通话时长"
+    IDS_CAP_IVRCH_ANI       "主叫号码"
+    IDS_CAP_IVRCH_DNIS      "被叫号码"
+    IDS_CAP_IVRCH_EDID      "状态表"
+    IDS_MSG_Q_CHANGE_CF     "本操作将更新当前工作组的呼叫流程, 是否继续？"
+    IDS_MSG_Q_CHANGE_RES    "本操作将更新当前工作组的资源配置, 是否继续？"
+    IDS_CAP_SET_DBSERVER    "数据库服务器"
+    IDS_CAP_SET_DSN         "数据源名称"
+    IDS_MSG_WRONG_PWD       "口令错误，请重试！"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MSG_Q_UPDATE_SCH_RES "是否要更新资源加载计划？"
+    IDS_OPT_EXTERNAL        "外接模块"
+    IDS_CAP_FILE_NAME       "文件名"
+    IDS_CAP_FILE_SIZE       "大小"
+    IDS_CAP_FILE_MODIFY_DATE "最后修改时间"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CAP_UMS_UNKNOWN     "未知"
+    IDS_CAP_UMS_IBCALL      "呼入"
+    IDS_CAP_UMS_OBCALL      "呼出"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CAP_UMS_GENERAL     "通用"
+    IDS_CAP_UMS_EMAIL       "电邮"
+    IDS_CAP_UMS_FAX         "传真"
+    IDS_CAP_UMS_SMS         "短信"
+    IDS_CAP_UMS_VMS         "留言"
+    IDS_CAP_UMS_CALLBACK    "回拨"
+    IDS_CAP_UMS_BBS         "BBS"
+    IDS_CAP_UMS_WEBCHAT     "聊天"
+    IDS_CAP_UMS_WEBCALL     "网络电话"
+    IDS_CAP_UMS_WEBCOLLAB   "网上协同"
+    IDS_CAP_UMS_VIDEO       "视频"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语(美国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_Error               ICON                    "res\\ico00003.ico"
+IDI_LICENSE_ICON        ICON                    "res\\license_.ico"
+IDI_MyCancle            ICON                    "res\\mycancle.ico"
+IDI_MyOK                ICON                    "res\\myok.ico"
+IDI_OPT_CHANNELS        ICON                    "res\\opt_chan.ico"
+IDI_OPT_EXTERNAL        ICON                    "res\\opt_exte.ico"
+IDI_OPT_PBX             ICON                    "res\\opt_pbx.ico"
+IDI_OPT_SYSTEM          ICON                    "res\\opt_syst.ico"
+IDI_Ready               ICON                    "res\\ico00004.ico"
+IDI_Start               ICON                    "res\\ico00005.ico"
+IDI_Stop                ICON                    "res\\ico00006.ico"
+IDI_SYSERROR            ICON                    "res\\syserror.ico"
+IDI_SYSREADY            ICON                    "res\\sysready.ico"
+IDI_SYSSTOP             ICON                    "res\\sysstop.ico"
+IDR_MAINFRAME           ICON                    "res\\idr_main.ico"
+IDI_SYSHALFREADY1       ICON                    "res\\syshalfr.ico"
+IDI_SYSHALFREADY2       ICON                    "res\\ico00009.ico"
+IDI_SYSHALFREADY4       ICON                    "res\\ico00013.ico"
+IDI_SYSHALFREADY3       ICON                    "res\\ico00010.ico"
+IDI_SYSBOTHREADY1       ICON                    "res\\sysbothr.ico"
+IDI_SYSBOTHREADY2       ICON                    "res\\ico00016.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGO_PICASOFT       BITMAP                  "res\\logo_pic.bmp"
+IDB_SPLASH              BITMAP                  "res\\splash.bmp"
+IDR_MAINFRAME           BITMAP                  "res\\mainfram.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_LOAD_FILE
+    BUTTON      ID_FILE_LOAD_DB
+    BUTTON      ID_FILE_LOAD_RESOURCE
+    BUTTON      ID_FILE_CONFIG
+    SEPARATOR
+    BUTTON      ID_EXE_START
+    BUTTON      ID_EXE_STOP
+    BUTTON      ID_EXE_RESTART
+    SEPARATOR
+    BUTTON      ID_VIEW_ALL_CH
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Load from &File...\tCtrl+F",  ID_FILE_LOAD_FILE
+        MENUITEM "Load from &Database...\tCtrl+D", ID_FILE_LOAD_DB
+        MENUITEM "Load &Resources...\tCtrl+R",  ID_FILE_LOAD_RESOURCE
+        MENUITEM SEPARATOR
+        MENUITEM "&Configuration...",           ID_FILE_CONFIG
+        MENUITEM SEPARATOR
+        MENUITEM "&Next Call Flow...",          IDM_FILE_TIMER_LD_CF
+        MENUITEM "Nex&t Resources...",          IDM_FILE_TIMER_LD_RES
+        MENUITEM SEPARATOR
+        MENUITEM "MRU",                         ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Execute"
+    BEGIN
+        MENUITEM "&Start\tCtrl+S",              ID_EXE_START
+        MENUITEM "S&top\tCtrl+T",               ID_EXE_STOP
+        MENUITEM "&Restart\tCtrl+R",            ID_EXE_RESTART
+        MENUITEM SEPARATOR
+        MENUITEM "Start All",                   ID_EXE_START_ALL
+        MENUITEM "Stop All",                    ID_EXE_STOP_ALL
+        MENUITEM "Restart All",                 ID_EXE_RESTART_ALL
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&All Channels",               ID_VIEW_ALL_CH
+        MENUITEM "&Compact View",               ID_VIEW_REPORT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "View &License...",            IDM_VIEW_LIC_INFO
+        MENUITEM "&Truncate SQL",               IDM_TRUNK_SQLLOG
+        MENUITEM SEPARATOR
+        MENUITEM "&About PowerVoice...",        ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_MENU MENU 
+BEGIN
+    POPUP "popupmenu"
+    BEGIN
+        MENUITEM "Open...",                     IDM_RESTORE
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        IDM_EXIT
+    END
+END
+
+IDR_POPMENU_CH MENU 
+BEGIN
+    POPUP "popm ch"
+    BEGIN
+        MENUITEM "Reset Channel",               ID_MenuCh_Reset
+        MENUITEM "Restart Channel",             ID_MenuCh_Restart
+        MENUITEM SEPARATOR
+        MENUITEM "OB Call Test",                ID_MenuCh_OBTes
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 256, 98
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PowerVoice"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,5,20,20
+    LTEXT           "PowerVoice 1.1",IDC_VERSION,32,17,223,16,SS_NOPREFIX
+    LTEXT           "iCenter, 288 Dongping Street, SIP Suzhou\nTel: 86-512-62991226\nFax: 86-512-62875738",
+                    IDC_STATIC,5,52,197,32
+    DEFPUSHBUTTON   "OK",IDOK,204,57,51,40,WS_GROUP
+    LTEXT           "http://www.pcsg.net",IDC_LINK,6,85,196,11,SS_NOPREFIX
+    LTEXT           "Proactive PowerVoice IP-IVR System",IDC_VERSION2,32,5,
+                    223,11,SS_NOPREFIX
+    LTEXT           "Proactive CyberSpace(Suzhou) Copyright(C) 2006-2012",
+                    IDC_STATIC,5,38,250,11
+END
+
+IDD_BROWSEPATH DIALOG  0, 0, 292, 143
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose directory"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LST_FILEVIEW,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,2,4,161,134
+    COMBOBOX        IDC_CMB_DRIVERS,167,4,121,58,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Tree1",IDC_TRE_DIR,"SysTreeView32",TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,167,19,121,99
+    DEFPUSHBUTTON   "OK",IDOK,184,124,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,238,124,50,14
+END
+
+IDD_CONFIG DIALOGEX 0, 0, 383, 245
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configuration"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_PLACEHOLDER,73,5,305,211
+    PUSHBUTTON      "Reset",IDRESET,156,223,50,14
+    DEFPUSHBUTTON   "OK",IDOK,209,223,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,262,223,50,14
+    PUSHBUTTON      "Apply",IDAPPLY,315,223,50,14
+    CONTROL         "Tree1",IDC_TREE_OPT,"SysTreeView32",TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_TABSTOP,4,9,64,207,
+                    WS_EX_STATICEDGE
+END
+
+IDD_DLG_GETPASSWORD DIALOG  0, 0, 96, 45
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pls Enter Password"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_TXT_PASSWORD,6,5,85,14,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,5,24,40,16
+    PUSHBUTTON      "Cancel",IDCANCEL,51,24,40,16
+END
+
+IDD_PAGE_GROUP DIALOG  0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Total Groups",IDC_IVR_STATIC1,9,9,52,10
+    EDITTEXT        IDC_IVR_GROUPS,66,7,28,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,94,7,11,12
+    LTEXT           "Total Channels",IDC_IVR_STATIC2,116,9,55,10
+    EDITTEXT        IDC_IVR_CHANNELS,176,7,28,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,204,7,11,12
+    LISTBOX         IDC_IVR_GROUPLIST,9,22,207,104,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Title",IDC_IVR_STATIC4,9,132,37,11
+    EDITTEXT        IDC_IVR_CAPTION,51,130,164,12,ES_AUTOHSCROLL
+    LTEXT           "From CH",IDC_IVR_STATIC5,9,149,37,11
+    EDITTEXT        IDC_IVR_STARTCH,51,147,22,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,73,147,11,12
+    CONTROL         "Enabled",IDC_GROUPENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,149,43,9
+    LTEXT           "To CH",IDC_IVR_STATIC6,9,164,37,11
+    EDITTEXT        IDC_IVR_ENDCH,51,162,22,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_IVR_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,73,162,11,12
+    CONTROL         "Use CTI",IDC_GROUPCTI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,161,50,9
+    CONTROL         "OB Only",IDC_GROUPOBONLY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,173,60,9
+    LISTBOX         IDC_IVR_CHLIST,222,7,69,177,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "CH ID",IDC_IVR_STATIC3,138,149,27,11
+    EDITTEXT        IDC_IVR_DN,170,147,46,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Modify",IDMODIFY,166,170,50,14
+END
+
+IDD_PAGE_PBX DIALOGEX 0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "Param",IDC_PBX_STATIC9,7,7,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "LCL",IDC_PBX_STATIC10,7,18,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "Max Play Time",IDC_PBX_STATIC1,7,151,58,11
+    EDITTEXT        IDC_PBX_FREQ1,40,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA1,68,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB1,96,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB1,124,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME1,152,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA1,180,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME1,208,18,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA1,236,18,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT1,264,18,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "INTL",IDC_PBX_STATIC11,7,29,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ2,40,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA2,68,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB2,96,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB2,124,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME2,152,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA2,180,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME2,208,29,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA2,236,29,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT2,264,29,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "XTRA",IDC_PBX_STATIC12,7,40,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ3,40,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA3,68,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB3,96,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB3,124,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME3,152,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA3,180,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME3,208,39,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA3,236,39,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT3,264,39,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "BUSY1",IDC_PBX_STATIC13,7,51,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ4,40,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA4,68,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB4,96,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB4,124,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME4,152,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA4,180,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME4,208,51,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA4,236,51,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT4,264,51,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "BUSY2",IDC_PBX_STATIC14,7,62,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ5,40,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA5,68,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB5,96,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB5,124,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME5,152,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA5,180,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME5,208,61,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA5,236,61,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT5,264,61,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "RNGBK1",IDC_PBX_STATIC15,7,73,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ6,40,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA6,68,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB6,96,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB6,124,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME6,152,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA6,180,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME6,208,73,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA6,236,73,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT6,264,73,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "RNGBK2",IDC_PBX_STATIC16,7,84,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ7,40,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA7,68,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB7,96,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB7,124,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME7,152,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA7,180,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME7,208,83,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA7,236,83,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT7,264,83,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "FAX1",IDC_PBX_STATIC17,7,95,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ8,40,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA8,68,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB8,96,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB8,124,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME8,152,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA8,180,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME8,208,95,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA8,236,95,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT8,264,95,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "FAX2",IDC_PBX_STATIC18,7,106,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ9,40,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA9,68,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB9,96,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB9,124,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME9,152,105,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA9,180,105,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME9,208,105,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA9,236,105,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT9,264,105,27,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "DISC DT",IDC_PBX_STATIC19,7,117,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ10,40,117,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA10,68,117,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB10,96,117,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTAB10,124,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_ONTIME10,152,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA10,180,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME10,208,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA10,236,117,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT10,264,117,27,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CTEXT           "DISC ST",IDC_PBX_STATIC20,7,128,33,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    EDITTEXT        IDC_PBX_FREQ11,40,128,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_DELTA11,68,128,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_PBX_FREQB11,96,128,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_PBX_DELTAB11,124,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_PBX_ONTIME11,152,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_ONDELTA11,180,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFTIME11,208,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_OFFDELTA11,236,128,28,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_REPEAT11,264,128,27,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PBX_SOUNDTIME,69,149,30,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PBX_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,99,149,11,12
+    LTEXT           "sec",IDC_PBX_STATIC6,114,151,17,12
+    LTEXT           "Rings before answer",IDC_PBX_STATIC3,134,151,79,12
+    EDITTEXT        IDC_PBX_RINGS,215,149,30,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PBX_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,245,149,11,12
+    LTEXT           "times",IDC_PBX_STATIC8,261,151,23,12
+    LTEXT           "Max Wait Time",IDC_PBX_STATIC2,7,171,57,11
+    EDITTEXT        IDC_PBX_WAITTIME,69,169,30,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_PBX_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,99,169,11,12
+    LTEXT           "sec",IDC_PBX_STATIC7,114,172,17,12
+    LTEXT           "Volume -10",IDC_PBX_STATIC4,134,171,54,12
+    CONTROL         "Slider1",IDC_PBX_VOLUMN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,189,165,79,22
+    LTEXT           "10db",IDC_PBX_STATIC5,271,172,22,11
+    CTEXT           "Freq1",IDC_PBX_STATIC21,40,7,28,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "Dev1",IDC_PBX_STATIC22,67,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "Freq2",IDC_PBX_STATIC23,96,7,28,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "Dev2",IDC_PBX_STATIC24,123,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "On",IDC_PBX_STATIC25,152,7,28,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "On-dev",IDC_PBX_STATIC26,179,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "Off",IDC_PBX_STATIC27,207,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "Off-dev",IDC_PBX_STATIC28,235,7,29,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "Repeat",IDC_PBX_STATIC29,264,7,27,12,SS_CENTERIMAGE | 
+                    WS_BORDER
+END
+
+IDD_PAGE_SYS DIALOGEX 0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Database",IDC_SYS_FRAME2,5,6,138,88
+    CONTROL         "OLE DB",IDC_OPT_DB_TYPE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,12,19,39,8
+    CONTROL         "ODBC",IDC_OPT_DB_TYPE2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,57,19,37,8
+    CONTROL         "None",IDC_OPT_DB_TYPE3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,99,19,37,8
+    LTEXT           "DB Server",IDC_SYS_LBL_DB_SERVER,13,34,53,12
+    EDITTEXT        IDC_SYS_DBSERVER,71,32,64,12,ES_AUTOHSCROLL
+    LTEXT           "Database",IDC_SYS_LBL_DB_DBNAME,13,48,53,12
+    EDITTEXT        IDC_SYS_DBNAME,71,46,64,12,ES_AUTOHSCROLL
+    LTEXT           "User ID",IDC_SYS_LBL_DB_USERID,14,62,53,10
+    EDITTEXT        IDC_SYS_DBUSERID,71,60,64,12,ES_AUTOHSCROLL
+    LTEXT           "Password",IDC_SYS_LBL_DB_PWD,13,76,53,10
+    EDITTEXT        IDC_SYS_DBPassword,71,74,64,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "Communication",IDC_SYS_FRAME3,148,6,146,88
+    LTEXT           "CTI Server IP",IDC_SYS_STATIC4,154,20,57,10
+    CONTROL         "IPAddress1",IDC_SYS_CTIIP,"SysIPAddress32",WS_TABSTOP,
+                    217,18,70,12
+    LTEXT           "CTI Server Port",IDC_SYS_STATIC5,154,33,60,10
+    EDITTEXT        IDC_SYS_CTIPORT,217,32,70,12,ES_AUTOHSCROLL
+    LTEXT           "DR IP",IDC_SYS_STATIC8,154,48,57,10
+    CONTROL         "IPAddress1",IDC_SYS_DRIP,"SysIPAddress32",WS_TABSTOP,
+                    217,46,70,12
+    LTEXT           "DR Port",IDC_SYS_STATIC9,154,61,57,10
+    EDITTEXT        IDC_SYS_DRPORT,217,59,70,12,ES_AUTOHSCROLL
+    LTEXT           "Log Level",IDC_SYS_STATIC10,153,76,58,10
+    COMBOBOX        IDC_CMB_LOG,217,74,70,68,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "CO. Signal",IDC_STATIC,4,99,290,30
+    CONTROL         "Use Global Call   Protocol",IDC_CHK_GC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,112,116,10
+    EDITTEXT        IDC_SYS_PROTOCOL,134,111,153,12,ES_AUTOHSCROLL
+    GROUPBOX        "Others",IDC_SYS_FRAME4,5,133,289,60
+    LTEXT           "Resource Root",IDC_SYS_STATIC6,13,147,59,12
+    EDITTEXT        IDC_SYS_VOXPATH,77,145,195,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_SYS_SEARCH1,274,145,13,12
+    LTEXT           "Record Root",IDC_SYS_STATIC7,13,160,59,12
+    EDITTEXT        IDC_SYS_RECPATH,77,158,195,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_SYS_SEARCH2,274,158,13,12
+    LTEXT           "Answer Delay",IDC_PBX_STATIC1,13,174,59,12
+    EDITTEXT        IDC_SYS_CH_ANS_DELAY,77,172,23,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SYS_SPN_ANS_DELAY,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,100,172,
+                    11,12
+    LTEXT           "ms",IDC_PBX_STATIC6,114,174,25,12
+    LTEXT           "Channel Reset",IDC_PBX_STATIC2,131,174,54,12
+    EDITTEXT        IDC_SYS_CH_RESET_DELAY,187,172,23,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SYS_SPN_RESET_DELAY,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,209,172,
+                    11,12
+    LTEXT           "min",IDC_PBX_STATIC7,224,174,25,12
+    CONTROL         "auto calc",IDC_CHK_AUTOCAL_RESETTIME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,240,174,52,10
+END
+
+IDD_SELECALLFLOWFILE DIALOG  0, 0, 187, 100
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Call Flow File"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+END
+
+IDD_SELECALLFLOWTABLE DIALOG  0, 0, 252, 139
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Call Flow"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,144,121,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,198,121,50,14
+    COMBOBOX        IDC_CMB_CALLFLOW,4,4,244,112,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SELERESOURCE DIALOG  0, 0, 252, 139
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select resource"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,144,121,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,198,121,50,14
+    COMBOBOX        IDC_CMB_RESOURCE,4,4,244,113,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_LICENSEINFO DIALOGEX 0, 0, 287, 260
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "License Information"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_TXT_SERVERMAC,106,197,175,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    EDITTEXT        IDC_TXT_SERVERHDSN,106,214,175,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,125,234,40,17
+    ICON            IDI_LICENSE_ICON,IDC_STATIC,8,9,20,20
+    LTEXT           "Product Name",IDC_STATIC,40,13,60,10
+    LTEXT           "Authorized User",IDC_STATIC,40,30,60,10
+    LTEXT           "Authorized Date",IDC_STATIC,40,47,60,10
+    CTEXT           "Power Voice",IDC_ST_ProdutcName,106,9,175,14,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CTEXT           "Power Voice",IDC_ST_UserIdentification,106,26,175,14,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CTEXT           "2004-05-01 18:00:00",IDC_ST_LICENSEDATE,106,43,175,14,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,1,60,285,9
+    LTEXT           "Authorized Server MAC",IDC_STATIC,7,80,91,10
+    CTEXT           "10-10-10-10-10-10",IDC_ST_SERVERMAC,106,76,175,14,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           "Authorized Server HDSN",IDC_STATIC,7,97,91,10
+    CTEXT           "1234567890",IDC_ST_SERVERHDSN,106,93,175,14,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           "IVR Group Lic",IDC_STATIC,7,114,91,10
+    CTEXT           "1",IDC_ST_LICENSE1,106,110,175,14,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "IVR Channel Lic",IDC_STATIC,7,131,91,10
+    CTEXT           "1",IDC_ST_LICENSE2,106,127,175,14,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "TTS Lic",IDC_STATIC,7,147,91,10
+    CTEXT           "0",IDC_ST_LICENSE3,106,144,175,14,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "ASR Lic",IDC_STATIC,7,164,91,10
+    CTEXT           "0",IDC_ST_LICENSE4,106,161,175,14,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,1,179,285,9
+    LTEXT           "This Server MAC",IDC_STATIC,7,199,91,10
+    LTEXT           "This Server HDSN",IDC_STATIC,7,216,91,10
+END
+
+IDD_DLG_AUTO_CALLFLOW DIALOG  0, 0, 295, 215
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Automatically load call flow"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,95,195,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,151,195,50,14
+    GROUPBOX        "Enable loading call flow automatically at ",
+                    IDC_GRP_ENABLED,5,5,286,184
+    CONTROL         "DateTimePicker1",IDC_LOG_DAY_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,23,20,65,14
+    CONTROL         "DateTimePicker2",IDC_LOG_TIME_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,95,20,69,
+                    14
+    CONTROL         "from file",IDC_OPT_SOURCE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,17,42,52,10
+    CONTROL         "or select call flow from the following list",
+                    IDC_OPT_SOURCE2,"Button",BS_AUTORADIOBUTTON,17,57,193,10
+    EDITTEXT        IDC_TXT_FILE,74,41,195,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE,271,41,13,12
+    COMBOBOX        IDC_CMB_CALLFLOW,12,71,272,113,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_AUTO_RESOURCE DIALOG  0, 0, 268, 198
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Automatically load resource"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,74,177,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,132,177,50,14
+    GROUPBOX        "Enable loading resource automatically at ",
+                    IDC_GRP_ENABLED,5,5,258,167
+    CONTROL         "DateTimePicker1",IDC_LOG_DAY_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,23,20,65,14
+    CONTROL         "DateTimePicker2",IDC_LOG_TIME_START,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,95,20,69,
+                    14
+    LTEXT           "Please select resource from the following list",
+                    IDC_STATIC,14,41,203,10
+    COMBOBOX        IDC_CMB_RESOURCE,12,54,244,113,CBS_SIMPLE | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PAGE_EXT DIALOGEX 0, 0, 300, 197
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Ext. Interface",IDC_EXT_EXTSYS,5,6,290,31,WS_TABSTOP
+    LTEXT           "Server IP",IDC_SYS_STATIC4,13,20,54,10
+    CONTROL         "IPAddress1",IDC_SYS_EXTIP,"SysIPAddress32",WS_TABSTOP,
+                    72,18,72,12
+    LTEXT           "Server Port",IDC_SYS_STATIC5,193,20,54,10
+    EDITTEXT        IDC_SYS_EXTPORT,253,18,34,12,ES_AUTOHSCROLL
+    GROUPBOX        "TTS",IDC_EXT_TTS,5,42,290,105,WS_TABSTOP
+    LTEXT           "Server IP",IDC_SYS_STATIC6,13,56,54,10
+    CONTROL         "IPAddress1",IDC_SYS_TTSIP,"SysIPAddress32",WS_TABSTOP,
+                    72,54,72,12
+    LTEXT           "Server Port",IDC_SYS_STATIC7,193,56,54,10
+    EDITTEXT        IDC_SYS_TTSPORT,253,54,34,12,ES_AUTOHSCROLL
+    LTEXT           "Product SN",IDC_SYS_STATIC11,13,71,54,10
+    EDITTEXT        IDC_SYS_TTSSN,72,69,215,12,ES_AUTOHSCROLL
+    LTEXT           "Buffer Size",IDC_SYS_STATIC12,12,86,54,10
+    EDITTEXT        IDC_SYS_TTSBufferSize,72,84,34,12,ES_AUTOHSCROLL
+    LTEXT           "KB",IDC_SYS_STATIC13,111,86,15,10
+    LTEXT           "Buffer Count",IDC_SYS_STATIC14,194,86,54,10
+    EDITTEXT        IDC_SYS_TTSBufferCount,254,84,34,12,ES_AUTOHSCROLL
+    LTEXT           "Voice Lib",IDC_SYS_STATIC15,12,106,54,10
+    LTEXT           "Speed  -10",IDC_SYS_STATIC16,136,106,49,10
+    LTEXT           "Volume  -10",IDC_SYS_STATIC17,12,126,53,10
+    LTEXT           "Pitch  -10",IDC_SYS_STATIC18,158,126,45,10
+    EDITTEXT        IDC_SYS_TTSVID,72,104,34,12,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_SYS_TTSSPEED,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,186,101,79,22
+    LTEXT           "10",IDC_PBX_STATIC5,268,105,22,11
+    CONTROL         "Slider1",IDC_SYS_TTSVOLUME,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,66,122,70,22
+    LTEXT           "10",IDC_PBX_STATIC9,138,126,11,11
+    CONTROL         "Slider1",IDC_SYS_TTSPITCH,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,203,122,70,22
+    LTEXT           "10",IDC_PBX_STATIC30,275,125,15,11
+    GROUPBOX        "ASR",IDC_EXT_ASR,5,152,290,31,WS_TABSTOP
+    LTEXT           "Server IP",IDC_SYS_STATIC8,13,166,54,10
+    CONTROL         "IPAddress1",IDC_SYS_ASRIP,"SysIPAddress32",WS_TABSTOP,
+                    72,164,72,12
+    LTEXT           "Server Port",IDC_SYS_STATIC9,193,166,54,10
+    EDITTEXT        IDC_SYS_ASRPORT,253,164,34,12,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 7,4,1,9
+ PRODUCTVERSION 7,4,1,9
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x29L
+#else
+ FILEFLAGS 0x28L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "TDM & IP IVR"
+            VALUE "CompanyName", "Smartac Solutions (Suzhou), PicaSoft (HK)"
+            VALUE "FileDescription", "PowerVoice Microsoft Application"
+            VALUE "FileVersion", "7, 4, 1, 9"
+            VALUE "InternalName", "PowerVoice - By Tony Sun (Baoshi Sun)"
+            VALUE "LegalCopyright", "Copyright (C) 2000 - 2013"
+            VALUE "LegalTrademarks", "www.smartac.co, www.picasoft.net"
+            VALUE "OriginalFilename", "PowerVoice.EXE"
+            VALUE "PrivateBuild", "7.4e English Version"
+            VALUE "ProductName", "PowerVoice IVRS"
+            VALUE "ProductVersion", "7, 4, 1, 9"
+            VALUE "SpecialBuild", "Support Cisco CCM, CUCM, CME & Dialogic, support multi-tenant"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        RIGHTMARGIN, 255
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_BROWSEPATH, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 288
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        TOPMARGIN, 5
+    END
+
+    IDD_SELECALLFLOWFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_SELECALLFLOWTABLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 248
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_SELERESOURCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 248
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 135
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR                  "res\\cur00001.cur"
+IDC_WAITCUR             CURSOR                  "res\\waitcur.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "PowerVoice\n\nPowerV\nPowerV Files (*.pvc)\n.pvc\nPowerVoice.Document\nPowerV Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "PowerVoice"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "Extension"
+    ID_INDICATOR_CAPS       "CAPS"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Show information about the application\nAbout"
+    ID_APP_EXIT             "Exit PowerVoice IVR System\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open file"
+    ID_FILE_MRU_FILE2       "Open file"
+    ID_FILE_MRU_FILE3       "Open file"
+    ID_FILE_MRU_FILE4       "Open file"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "View or hide toolbar\nView or hide toolbar"
+    ID_VIEW_STATUS_BAR      "View or hide status bar\nView or hide status bar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change window size"
+    AFX_IDS_SCMOVE          "Move window"
+    AFX_IDS_SCMINIMIZE      "Minimize"
+    AFX_IDS_SCMAXIMIZE      "Maximize"
+    AFX_IDS_SCNEXTWINDOW    "Next window"
+    AFX_IDS_SCPREVWINDOW    "Previous window"
+    AFX_IDS_SCCLOSE         "Close window"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore window"
+    AFX_IDS_SCTASKLIST      "Show task list"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_LOAD_DB         "Load call flow from Database\nLoad call flow table"
+    ID_FILE_CONFIG          "Update IVR system setting\nConfiguration"
+    ID_FILE_LOAD_FILE       "Load call flow from file(*.pvc)\nLoad call flow file"
+    ID_EXE_START            "Start IVR Group\nStart"
+    ID_EXE_STOP             "Stop IVR Group\nStop"
+    ID_EXE_RESTART          "Restart IVR Group\nRestart"
+    ID_EXE_START_ALL        "Start all IVR Groups\nStart all"
+    ID_EXE_STOP_ALL         "Stop all IVR Groups\nStop all"
+    ID_EXE_RESTART_ALL      "Restart all IVR Groups\nRestart all"
+    ID_VIEW_ALL_CH          "View all channels or single group\nView all or one group"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PROGRESSBAR         "ID for Progress Bar Control"
+    IDC_STATICSYS           " "
+    IDC_STATICDB            " "
+    IDC_STATICCOM           " "
+    IDC_STATICHW            " "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INDICATOR_SYS       "                                                                                                                                                                                                      Sytem"
+    IDS_INDICATOR_DB        "                                                                                                                                                                                                      DB"
+    IDS_INDICATOR_COMM      "                                                                                                                                                                                                      Comm"
+    IDS_INDICATOR_HW        "                                                                                                                                                                                                      H/W"
+    IDS_MSG_Q_EXITAPP       "Are you sure you want to exit PowerVoice Server?"
+    IDS_INDICATOR_PROGRESS  "                                                                                                                                                                                                                                                                                                                                                                                                                   ?????                                                                                                                                                                                                                    "
+    IDS_MSG_Q_STOPGROUP     "Are you sure you want to stop the IVR Group?"
+    IDS_MSG_Q_RESTARTGROUP  "Are you sure you want to restart the IVR Group?"
+    IDS_MSG_Q_STOPALL       "Are you sure you want to stop all IVR Groups?"
+    IDS_MSG_Q_STARTALL      "Are you sure you want to start all IVR Groups?"
+    IDS_MSG_Q_RESTARTALL    "Are you sure you want to restart all IVR Groups?"
+    IDS_MSG_E_ALREADY_RUN   "Power Voice is already started!"
+    IDS_ABOUTME_CAPTION     "About"
+    IDS_CAP_BTN_OK          "OK"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_LOAD_RESOURCE   "Load resources to IVR Group\nLoad resources"
+    IDM_VIEW_LIC_INFO       "View Software License Information"
+    IDM_TRUNK_SQLLOG        "Truncate sql log file, and open a new one."
+    IDM_FILE_TIMER_LD_CF    "Update call flow at next time\nUpdate call flow at next time"
+    IDM_FILE_TIMER_LD_RES   "Upate resources at next time\nUpate resources at next time"
+    ID_VIEW_REPORT          "Compact Channel View\nCompact Channel View"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CAP_IVRCH_CTI_ST    "CTI Monitor"
+    IDS_CAP_IVRCH_CTI_DISABLE "Disable"
+    IDS_CAP_IVRCH_CTI_MONITOR_ERROR "Error"
+    IDS_CAP_IVRCH_CTI_MONITOR_OK "OK"
+    IDS_MSG_NEED_RESTART    "To make new settings affective, please restart Power Voice."
+    IDS_MSG_NEEDNOT_RESTART "New settings are applied successfully."
+    IDS_MSG_WRONG_NEWSETTING 
+                            "Some new settings may be invalid, please try again!"
+    IDS_MSG_SAVED_NEWSETTING "New settings are saved!"
+    IDS_MSG_UNSAVED_NEWSETTING "Failed to save new settings!"
+    IDS_MSG_Q_DISCARD_CHANGES 
+                            "Are you sure you want to discard all changes you have made?"
+    IDS_RESTART_POWERVOICE  "For some internal reason, PowerVoice should be restarted!"
+    IDS_OPT_SYSTEM          "System"
+    IDS_OPT_PBX             "PBX"
+    IDS_OPT_CHANNELS        "Channels"
+    IDS_MSG_Q_TRUNCATE_LOG  "Sure to truncate sql log?"
+    IDS_MSG_Q_UPDATE_SCH_CF "Sure to update schedule for loading call flow?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MAILADDRESS         "tony.sun@pcsg.net"
+    IDS_MAILTOTIP           "Need more services..."
+    IDS_CAP_IVRGR_GROUPNO   "Group ID"
+    IDS_CAP_IVRGR_CAPTION   "Title"
+    IDS_CAP_IVRGR_CURIVR    "Call Flow"
+    IDS_CAP_IVRGR_RESID     "Resources"
+    IDS_CAP_IVRGR_STARTCH   "From CH"
+    IDS_CAP_IVRGR_ENDCH     "To CH"
+    IDS_CAP_IVRGR_CTIST     "CTI Enabled"
+    IDS_CAP_IVRGP_DEFAULT_CF "Default Call Flow"
+    IDS_CAP_IVRGP_CTI_NOUSE "Disabled"
+    IDS_CAP_IVRGR_CALLCOUNT "Daily / YTD Call Count"
+    IDS_CAP_IVRGP_CTI_CONNECT "Enabled"
+    IDS_CAP_IVRGR_LASTLOADTIME "Call Flow Load Time"
+    IDS_MSG_M_LOADCF_OK     "Load call flow finished successfully!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MSG_M_LOADCF_FAIL   "Fail to load call flow, please check the data! Default call flow loaded instead!"
+    IDS_MSG_M_LOADCF_ERROR  "Fail to load call flow, please check relative settings!"
+    IDS_MSG_E_NEED_GC_PROTOCOL 
+                            "GlobalCall protocol must be specified, please check it!"
+    IDS_MSG_M_LOADRES_OK    "Resources is loaded successfully!"
+    IDS_MSG_M_LOADRES_FAIL  "Fail to load resource, please check relative settings!"
+    IDS_CAP_IVRCH_CHANNELNO "Channel ID"
+    IDS_CAP_IVRCH_STATUS    "Status"
+    IDS_CAP_IVRCH_DURATION  "Duration"
+    IDS_CAP_IVRCH_ANI       "ANI"
+    IDS_CAP_IVRCH_DNIS      "DNIS"
+    IDS_CAP_IVRCH_EDID      "Status Machine"
+    IDS_MSG_Q_CHANGE_CF     "The operation will update call flow on current IVR Group, sure to go on? "
+    IDS_MSG_Q_CHANGE_RES    "The operation will update resources on current IVR Group,  sure to go on?"
+    IDS_CAP_SET_DBSERVER    "DB Server"
+    IDS_CAP_SET_DSN         "DSN"
+    IDS_MSG_WRONG_PWD       "Password is wrong, try it again!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MSG_Q_UPDATE_SCH_RES "Sure to update schedule for loading resource?"
+    IDS_OPT_EXTERNAL        "External"
+    IDS_CAP_FILE_NAME       "Name"
+    IDS_CAP_FILE_SIZE       "Size"
+    IDS_CAP_FILE_MODIFY_DATE "Date Modified"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CAP_UMS_UNKNOWN     "Unknown"
+    IDS_CAP_UMS_IBCALL      "IB Call"
+    IDS_CAP_UMS_OBCALL      "OB Call"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CAP_UMS_GENERAL     "General"
+    IDS_CAP_UMS_EMAIL       "EMail"
+    IDS_CAP_UMS_FAX         "FAX"
+    IDS_CAP_UMS_SMS         "SMS"
+    IDS_CAP_UMS_VMS         "VMS"
+    IDS_CAP_UMS_CALLBACK    "CallBack"
+    IDS_CAP_UMS_BBS         "BBS"
+    IDS_CAP_UMS_WEBCHAT     "Chat"
+    IDS_CAP_UMS_WEBCALL     "NetCall"
+    IDS_CAP_UMS_WEBCOLLAB   "Web"
+    IDS_CAP_UMS_VIDEO       "Video"
+END
+
+#endif    // 英语(美国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\PowerVoice.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

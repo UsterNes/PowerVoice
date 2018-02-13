@@ -1,0 +1,65 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PowerVoice", "PowerVoice.vcproj", "{AA782CAE-ABC6-47E6-9079-DC633A9A4998}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug Cisco IP = Debug Cisco IP
+		Debug Cisco MediaDriver = Debug Cisco MediaDriver
+		Debug CME IP = Debug CME IP
+		Debug Dialogic TDM Chinese = Debug Dialogic TDM Chinese
+		Debug Dialogic TDM Eglish = Debug Dialogic TDM Eglish
+		Debug Dongjing TDM Chinese = Debug Dongjing TDM Chinese
+		Debug Dongjing TDM English = Debug Dongjing TDM English
+		Release = Release
+		Release Cisco IP Chinese = Release Cisco IP Chinese
+		Release Cisco IP English = Release Cisco IP English
+		Release Cisco MediaDriver Chinese = Release Cisco MediaDriver Chinese
+		Release Cisco MediaDriver English = Release Cisco MediaDriver English
+		Release CME IP Chinese = Release CME IP Chinese
+		Release CME IP English = Release CME IP English
+		Remote Debug Dialogic TDM Chinese = Remote Debug Dialogic TDM Chinese
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug.ActiveCfg = Debug CME IP|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug.Build.0 = Debug CME IP|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Cisco IP.ActiveCfg = Debug Cisco IP|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Cisco IP.Build.0 = Debug Cisco IP|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Cisco MediaDriver.ActiveCfg = Debug Cisco MediaDriver|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Cisco MediaDriver.Build.0 = Debug Cisco MediaDriver|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug CME IP.ActiveCfg = Debug CME IP|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug CME IP.Build.0 = Debug CME IP|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dialogic TDM Chinese.ActiveCfg = Debug Dialogic TDM Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dialogic TDM Chinese.Build.0 = Debug Dialogic TDM Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dialogic TDM Eglish.ActiveCfg = Debug Dialogic TDM Eglish|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dialogic TDM Eglish.Build.0 = Debug Dialogic TDM Eglish|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dongjing TDM Chinese.ActiveCfg = Debug Dongjing TDM Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dongjing TDM Chinese.Build.0 = Debug Dongjing TDM Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dongjing TDM English.ActiveCfg = Debug Dongjing TDM English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Debug Dongjing TDM English.Build.0 = Debug Dongjing TDM English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release.ActiveCfg = Release CME IP English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release.Build.0 = Release CME IP English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco IP Chinese.ActiveCfg = Release Cisco IP Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco IP Chinese.Build.0 = Release Cisco IP Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco IP English.ActiveCfg = Release Cisco IP English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco IP English.Build.0 = Release Cisco IP English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco MediaDriver Chinese.ActiveCfg = Release Cisco MediaDriver Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco MediaDriver Chinese.Build.0 = Release Cisco MediaDriver Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco MediaDriver English.ActiveCfg = Release Cisco MediaDriver English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release Cisco MediaDriver English.Build.0 = Release Cisco MediaDriver English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release CME IP Chinese.ActiveCfg = Release CME IP Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release CME IP Chinese.Build.0 = Release CME IP Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release CME IP English.ActiveCfg = Release CME IP English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Release CME IP English.Build.0 = Release CME IP English|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Remote Debug Dialogic TDM Chinese.ActiveCfg = Remote Debug Dialogic TDM Chinese|Win32
+		{AA782CAE-ABC6-47E6-9079-DC633A9A4998}.Remote Debug Dialogic TDM Chinese.Build.0 = Remote Debug Dialogic TDM Chinese|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
